@@ -1,10 +1,5 @@
+package spaceobjects;
 
-/**
- * Write a description of class Bullet here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Bullet extends SpaceObject
 {
     // instance variables - replace the example below with your own
