@@ -1,10 +1,5 @@
+package spaceobjects;
 
-/**
- * Write a description of class EnemyShip2 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class ShipType2 extends SpaceObject
 {
     // instance variables - replace the example below with your own
