@@ -1,11 +1,6 @@
+package spaceobject;
 
-/**
- * Write a description of class Astroids here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class Astroids extends SpaceObject
+public class Astroid extends SpaceObject
 {
     // instance variables - replace the example below with your own
     private int x;
