@@ -1,11 +1,5 @@
 
-/**
- * Write a description of class Missiles here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class Missiles extends SpaceObject
+public class Missile extends SpaceObject
 {
     // instance variables - replace the example below with your own
     private int x;
