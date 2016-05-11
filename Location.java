@@ -1,4 +1,4 @@
-package field;
+
 
 public class Location {
 
