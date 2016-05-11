@@ -1,6 +1,6 @@
 package spaceobjects;
 
-import field.Location;
+import Location;
 
 public class SpaceObject {
 
