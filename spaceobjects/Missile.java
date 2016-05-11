@@ -1,3 +1,4 @@
+package spaceobjects;
 
 public class Missile extends SpaceObject
 {
