@@ -20,10 +20,6 @@ public class SpaceObject {
 		
 	}
 	
-	public void removeSelfFromPlay() {
-		
-	}
-	
 	public Location getLocation() {
 		return location;
 	}
