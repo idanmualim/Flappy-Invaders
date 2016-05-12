@@ -8,10 +8,9 @@ public class Astroid extends SpaceObject
     /**
      * Constructor for objects of class Astroids
      */
-    public Astroids()
+    public Astroids(Location loc, int dir, int vel)
     {
-        // initialise instance variables
-        x = 0;
+        super.(loc, dir, vel);
     }
 
 }
