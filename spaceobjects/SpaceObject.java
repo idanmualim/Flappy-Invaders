@@ -8,8 +8,10 @@ public class SpaceObject {
 	private int direction;
 	private int speed;
 	
-	public SpaceObject() {
-		
+	public SpaceObject(Location loc, int dir, int vel) {
+		location = loc;
+		direction = dir;
+		speed = vel;
 	}
 	
 	public void act() {
