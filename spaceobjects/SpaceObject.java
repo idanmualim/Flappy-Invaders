@@ -5,13 +5,13 @@ import Location;
 public class SpaceObject {
 
 	private Location location;
-	private int direction;
-	private int speed;
+	private int xSpeed;
+	private int ySpeed;
 	
-	public SpaceObject(Location loc, int dir, int vel) {
+	public SpaceObject(Location loc, int xSpeed, int ySpeed) {
 		location = loc;
-		direction = dir;
-		speed = vel;
+		this.xSpeed = xSpeed;
+		this.ySpeed = ySpeed;
 	}
 	
 	public void act() {
