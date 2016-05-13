@@ -1,4 +1,4 @@
-package spaceobjects
+package spaceobjects;
 
 public class Player extends SpaceObject
 {
