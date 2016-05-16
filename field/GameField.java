@@ -5,6 +5,7 @@ import spaceobjects.SpaceObject;
 public class GameField {
 
 	private ArrayList<SpaceObject> objects;
+	private ArrayList<Bullet> playerBullets;
 	private int score;
 	private int shipsDestroyed;
 	private int timer;
