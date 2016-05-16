@@ -1,27 +1,29 @@
 package spaceobjects;
 
-public class Player extends SpaceObject
-{
-    // instance variables - replace the example below with your own
-    private int x;
+import field.GameField;
+import field.Location;
 
-    /**
-     * Constructor for objects of class Player
-     */
-    public Player()
-    {
-        // initialise instance variables
-        x = 0;
-    }
+public class Player extends SpaceObject{
 
-    public void checkHit()
-    {
-        // checks if player is hit by missile or ship or rock 
-        // if hit ends game maybe explosion annimation first?
-    }
-    
-    public void shoot()
-    {
-        // makes player shoot missile
-    }
+	public Player(Location loc, int xVel, int yVel, GameField field) {
+		super(loc, xVel, yVel, field);
+	}
+	
+	public void act() {
+		setYVel(getYVel() - 1);
+		move();
+	}
+	
+	public void checkHit() {
+		// checks if player is hit by missile or ship or rock 
+		// if hit ends game maybe explosion annimation first?
+		// Wait for Brandon to finish the Hitbox class
+	}
+
+	public void shoot() {
+		Bullet b = new Bullet(getLocation(), true);
+		getGameField().addBulletToField(b);
+		
+	}
+	
 }
