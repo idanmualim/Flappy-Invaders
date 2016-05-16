@@ -26,12 +26,16 @@ public class SpaceObject {
 		return location;
 	}
 	
-	public int getDirection() {
-		return direction;
+	public void setLocation(int x, int y) {
+		location.setLocation(x, y);
 	}
 	
-	public int getSpeed() {
-		return speed;
+	public int getXSpeed() {
+		return xSpeed;	
+	}
+	
+	public int getYSpeed() {
+		return ySpeed;
 	}
 	
 }
