@@ -40,4 +40,7 @@ public class SpaceObject {
 		return ySpeed;
 	}
 	
+	public Hitbox getHitBox() {
+		return hitbox;
+	}
 }
