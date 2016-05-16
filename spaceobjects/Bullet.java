@@ -1,23 +1,17 @@
-public class Bullet extends SpaceObject
-{
-    private int xPos;
-    public Bullet(Location loc, int dir, int vel)
-    {
-        super.(loc, dir, vel);
-        xPos = loc.getX;
-    }
+package spaceobjects;
 
-    public int getXPos() {
-        return loc.getX();
-    }
+import field.Location;
 
-    public int getYPos() {
-        return loc.getY();
-    }
+public class Bullet extends SpaceObject {
 
-    public void moveBullet(int xSpeed)
-    {
-        //only moves in x coordinate
-        xPos += xSpeed;
-    }
+	private final int DEFAULT_SPEED = 1;
+	
+	public Bullet(Location loc, boolean firedByPlayer) {
+		setLocation(loc);
+		if(firedByPlayer)
+			setXVel(DEFAULT_SPEED);
+		else
+			setXVel(-DEFAULT_SPEED);
+	}
+	
 }
