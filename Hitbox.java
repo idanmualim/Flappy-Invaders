@@ -1,45 +1,27 @@
 
-/**
- * Write a description of class Hitbox here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Hitbox
 {
     private Location loc;
-    int length, width, direction;
+    double radius;
 
-    /**
-     * Constructor for objects of class Hitbox
-     */
-    public Hitbox(Location location, int xLen, int yWid, int rotation)
+    public Hitbox(Location location, double rad)
     {
         loc = location;
-        length = xLen;
-        width = yWid;
-        direction = rotation;
+        radius = rad;
     }
     
-    public void changeLocation(Location newLoc)
+    public void changeLocation(int x, int y)
     {
-        loc = newLoc;
-    }
-    
-    public void changeRoation(int rotation)
-    {
-        direction = rotation;
+        loc.setLocation(x, y);
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
     public boolean checkCollision(Location bullet)
     {
-        int xCoordinate = bullet.getX();
-        return false;
+        int a = loc.getX() - bullet.getX();
+        int b = loc.getY() - bullet.getY();
+        if (Math.sqrt(a*a + b*b) <= radius)
+            return true;
+        else
+            return false;
     }
 }
