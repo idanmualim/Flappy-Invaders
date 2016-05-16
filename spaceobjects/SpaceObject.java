@@ -1,46 +1,73 @@
 package spaceobjects;
 
-import Location;
+import field.GameField;
+import field.Location;
 
 public class SpaceObject {
 
 	private Location location;
-	private int xSpeed;
-	private int ySpeed;
-	private Hitbox hitbox;
+	private int xSpeed, ySpeed;
+	private GameField gField;
 	
-	public SpaceObject(Location loc, int xSpeed, int ySpeed, double hitboxRadius) {
+	public SpaceObject() {}
+	
+	public SpaceObject(Location loc, int xVel, int yVel, GameField field) {
 		location = loc;
-		this.xSpeed = xSpeed;
-		this.ySpeed = ySpeed;
-		hibox = new Hitbox(loc, hitboxRadius);
+		xSpeed = xVel;
+		ySpeed = yVel;
+		gField = field;
 	}
 	
 	public void act() {
-		
+		move();
 	}
 	
-	public void shoot() {
-		
+	public void move() {
+		int xVal = location.getX();
+		int yVal = location.getY();
+		xVal += xSpeed;
+		yVal += ySpeed;
+		location.setX(xVal);
+		location.setY(yVal);
+	}
+	
+	
+	public void setLocation(Location loc) {
+		location = loc;
 	}
 	
 	public Location getLocation() {
 		return location;
 	}
 	
-	public void setLocation(int x, int y) {
-		location.setLocation(x, y);
+	public void setXVel(int velocity) {
+		xSpeed = velocity;
 	}
 	
-	public int getXSpeed() {
-		return xSpeed;	
+	/**
+	 * @return Velocity in X direction
+	 */
+	public int getXVel() {
+		return xSpeed;
 	}
 	
-	public int getYSpeed() {
+	public void setYVel(int velocity) {
+		ySpeed = velocity;
+	}
+	
+	/**
+	 * @return Velocity in Y direction
+	 */
+	public int getYVel() {
 		return ySpeed;
 	}
 	
-	public Hitbox getHitBox() {
-		return hitbox;
+	public void setGameField(GameField field) {
+		gField = field;
 	}
+	
+	public GameField getGameField() {
+		return gField;
+	}
+	
 }
