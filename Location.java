@@ -18,6 +18,11 @@ public class Location {
 		return yPos;
 	}
 	
+	public void setLocation(int x, int y) {
+		xPos = x;
+		yPos = y;
+	}
+	
 	public boolean equals(Object other) {
 		Location loc = (Location)other;
 		return (loc.getX() == xPos) && (loc.getY() == yPos);
