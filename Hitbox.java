@@ -19,7 +19,7 @@ public class Hitbox
         return radius;
     }
 
-    public boolean checkCollision(Location bullet)
+    public boolean checkCollision(Hitbox bullet)
     {
         int a = loc.getX() - bullet.getX();
         int b = loc.getY() - bullet.getY();
