@@ -7,11 +7,13 @@ public class SpaceObject {
 	private Location location;
 	private int xSpeed;
 	private int ySpeed;
+	private Hitbox hitbox;
 	
-	public SpaceObject(Location loc, int xSpeed, int ySpeed) {
+	public SpaceObject(Location loc, int xSpeed, int ySpeed, double hitboxRadius) {
 		location = loc;
 		this.xSpeed = xSpeed;
 		this.ySpeed = ySpeed;
+		hibox = new Hitbox(loc, hitboxRadius);
 	}
 	
 	public void act() {
