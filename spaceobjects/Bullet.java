@@ -1,28 +1,23 @@
-package spaceobjects;
-
 public class Bullet extends SpaceObject
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Bullet
-     */
-    public Bullet()
+    private int xPos;
+    public Bullet(Location loc, int dir, int vel)
     {
-        // initialise instance variables
-        x = 0;
+        super.(loc, dir, vel);
+        xPos = loc.getX;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    public int getXPos() {
+        return loc.getX();
+    }
+
+    public int getYPos() {
+        return loc.getY();
+    }
+
+    public void moveBullet(int xSpeed)
     {
-        // put your code here
-        return x + y;
+        //only moves in x coordinate
+        xPos += xSpeed;
     }
 }
