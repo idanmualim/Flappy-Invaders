@@ -26,6 +26,10 @@ public class GameField {
 		objects.add(toAdd);
 	}
 	
+	public void addBulletToField(Bullet toAdd) {
+		playerBullets.add(toAdd);
+	}
+	
 	public SpaceObject remove(SpaceObject toRemove) {
 		return null;
 	}
