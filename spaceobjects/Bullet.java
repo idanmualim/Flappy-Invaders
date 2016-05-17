@@ -14,4 +14,8 @@ public class Bullet extends SpaceObject {
 			setXVel(-DEFAULT_SPEED);
 	}
 	
+	public void act() {
+		move();
+	}
+	
 }
