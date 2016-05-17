@@ -8,14 +8,16 @@ public class SpaceObject {
 	private Location location;
 	private int xSpeed, ySpeed;
 	private GameField gField;
+	private Hitbox HitBox;
 	
 	public SpaceObject() {}
 	
-	public SpaceObject(Location loc, int xVel, int yVel, GameField field) {
+	public SpaceObject(Location loc, int xVel, int yVel, GameField field, int radius) {
 		location = loc;
 		xSpeed = xVel;
 		ySpeed = yVel;
 		gField = field;
+		HitBox = new Hitbox(loc, radius);
 	}
 	
 	public void act() {
@@ -68,6 +70,11 @@ public class SpaceObject {
 	
 	public GameField getGameField() {
 		return gField;
+	}
+	
+	public Hitbox getHitBox()
+	{
+		return HitBox;
 	}
 	
 }
