@@ -6,6 +6,7 @@ public class GameField {
 
 	private ArrayList<SpaceObject> objects;
 	private ArrayList<Bullet> playerBullets;
+	private Player player;
 	private int score;
 	private int shipsDestroyed;
 	private int timer;
@@ -19,7 +20,27 @@ public class GameField {
 	}
 	
 	public void checkHit() {
-		
+		for (int i = 0; i < playerBullets.size(); i++)//Checks for collisions between player fired bullets and enemy objects.
+		{
+			for (int z = 0; z < objects.size(); z++)
+			{
+				if (playerBullets.get(i).getHitBox().checkCollision(objects.get(z).getHitBox()))
+				{
+					removeBullet(playerBullets.get(i));
+					i--;
+					if (!(objects.get(z) instanceOf Asteroid))//Destroyed SpaceObject if it's not an asteroid
+					{
+						remove(objects.get(z));
+						z--;
+					}
+				}
+			}
+		}
+		for (int b = 0; b < objects.size(); b++)
+		{
+			if (player.getHitBox().checkCollision(objects.get(b).getHitBox()))
+				//END GAME END GAME HERE END GAME END GAME END GAME HERE 
+		}
 	}
 	
 	public void addToField(SpaceObject toAdd) {
