@@ -16,7 +16,9 @@ public class GameField {
 	}
 	
 	public void step() {
-		
+		checkHit();
+		timer++;
+		score ++;
 	}
 	
 	public void checkHit() {
@@ -32,6 +34,7 @@ public class GameField {
 					{
 						remove(objects.get(z));
 						z--;
+						score += 50;
 					}
 				}
 			}
