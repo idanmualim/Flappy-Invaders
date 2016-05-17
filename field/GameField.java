@@ -17,6 +17,11 @@ public class GameField {
 	}
 	
 	public void step() {
+		for (int i = 0; i < objects.size(); i++) //Moves all enemy SpaceObjects
+			objects.get(i).move();
+		for (int b = 0; b < playerBullets.size(); b++)//Moves all player bullets
+			playerBullets.get(b).move();
+		player.move();//TO BE EDITED moves player  HOW TO MAKE JUMP IDK
 		checkHit();
 		timer++;
 		score ++;
