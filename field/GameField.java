@@ -35,6 +35,7 @@ public class GameField {
 						remove(objects.get(z));
 						z--;
 						score += 50;
+						shipsDestroyed++;
 					}
 				}
 			}
