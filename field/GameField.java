@@ -10,9 +10,10 @@ public class GameField {
 	private int score;
 	private int shipsDestroyed;
 	private int timer;
+	private boolean gameOver;
 	
 	public GameField() {
-		
+		gameOver = false;
 	}
 	
 	public void step() {
@@ -43,7 +44,7 @@ public class GameField {
 		for (int b = 0; b < objects.size(); b++)
 		{
 			if (player.getHitBox().checkCollision(objects.get(b).getHitBox()))
-				//END GAME END GAME HERE END GAME END GAME END GAME HERE 
+				gameOver = true; 
 		}
 	}
 	
@@ -71,4 +72,7 @@ public class GameField {
 		}
 	}
 	
+	public boolean isGameOver() {
+		return gameOver;
+	}
 }
