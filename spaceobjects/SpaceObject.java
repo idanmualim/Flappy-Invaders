@@ -9,10 +9,11 @@ public class SpaceObject {
 	private int xSpeed, ySpeed;
 	private GameField gField;
 	private Hitbox HitBox;
+	private boolean dynamicVel; //If the velocity changes, is true, else is false;
 	
 	public SpaceObject() {}
 	
-	public SpaceObject(Location loc, int xVel, int yVel, GameField field, int radius) {
+	public SpaceObject(Location loc, int xVel, int yVel, GameField field, int radius, boolean dynamicVelocity) {
 		location = loc;
 		xSpeed = xVel;
 		ySpeed = yVel;
@@ -31,6 +32,10 @@ public class SpaceObject {
 		yVal += ySpeed;
 		location.setX(xVal);
 		location.setY(yVal);
+		if (dynamicVel)
+		{
+			//Change velocity of object
+		}
 	}
 	
 	
