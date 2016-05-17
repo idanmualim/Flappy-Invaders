@@ -45,7 +45,8 @@ public class SpaceObject {
 	}
 	
 	public void changeVelocity() {
-		//Does nothing if velocity of object does not change. Does something if velocity does change. This is to be modified in children classes that have dynamic velocities
+		//Does nothing if velocity of object does not change. Does something if velocity does change. 
+		//This is to be modified in children classes that have dynamic velocities
 	}
 	
 	public void setXVel(int velocity) {
