@@ -30,8 +30,20 @@ public class GameField {
 		playerBullets.add(toAdd);
 	}
 	
-	public SpaceObject remove(SpaceObject toRemove) {
-		return null;
+	public void remove(SpaceObject toRemove) {
+		Iterator<SpaceObject> iter = objects.iterator();
+		while(iter.hasNext()) {
+			if(iter.next().equals(toRemove))
+				iter.remove();
+		}
+	}
+	
+	public void removeBullet(Bullet b) {
+		Iterator<Bullet> iter = playerBullets.iterator();
+		while(iter.hasNext()) {
+			if(iter.next().equals(b))
+				iter.remove();
+		}
 	}
 	
 }
