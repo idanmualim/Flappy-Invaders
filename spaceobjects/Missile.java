@@ -2,15 +2,11 @@ package spaceobjects;
 
 public class Missile extends SpaceObject
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Missiles
-     */
-    public Missiles()
+    private final int SIZE = //put size of missile hitbox here
+    private final int XSPEED = //put initial horizontal speed here (Make sure it's negative)
+    
+    public Missiles(Location loc, GameField field)
     {
-        // initialise instance variables
-        x = 0;
+        super(Loc, XSPEED, 0, field, SIZE);    
     }
 }
