@@ -15,6 +15,6 @@ public class ShipType1 extends SpaceObject
     {
         //doesnt move and shoots towards the player
         Bullet b = new Bullet(getLocation(), false);
-		getGameField().addBulletToField(b);
+	getGameField().addBulletToField(b);
     }
 }
