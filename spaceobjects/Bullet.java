@@ -4,7 +4,7 @@ import field.Location;
 
 public class Bullet extends SpaceObject {
 
-	private final int DEFAULT_SPEED = 1;
+	private final int DEFAULT_SPEED = 3;
 	
 	public Bullet(Location loc, boolean firedByPlayer) {
 		setLocation(loc);
