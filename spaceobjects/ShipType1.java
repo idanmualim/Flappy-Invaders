@@ -7,8 +7,8 @@ public class ShipType1 extends SpaceObject
 {
 	private final int VELOCITY = 0; //ship stays in one place
 	
-    public ShipType1(Location loc, int xVel, int yVel, GameField field, int radius) {
-		super(loc, xVel, yVel, field, radius);
+    public ShipType1(Location loc, int xVel, int yVel, GameField field) {
+		super(loc, field);
     }
 
     public act()
