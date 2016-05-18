@@ -8,10 +8,8 @@ public class ShipType1 extends SpaceObject
     /**
      * Constructor for objects of class EnemyShip
      */
-    public ShipType1()
-    {
-        // initialise instance variables
-        x = 0;
+    public ShipType1(Location loc, int xVel, int yVel, GameField field, int radius) {
+		super(loc, xVel, yVel, field, radius);
     }
 
     public act()
