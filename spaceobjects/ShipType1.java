@@ -7,7 +7,7 @@ public class ShipType1 extends SpaceObject
 {
 	private final int VELOCITY = 0; //ship stays in one place
 	
-    public ShipType1(Location loc, int xVel, int yVel, GameField field) {
+    public ShipType1(Location loc, GameField field) {
 		super(loc, field);
     }
 
