@@ -80,4 +80,17 @@ public class GameField {
 	public boolean isGameOver() {
 		return gameOver;
 	}
+	
+	public int getScore() {
+		return score;
+	}
+	
+	public int getShipsDestroyed() {
+		return shipsDestroyed;
+	}
+	
+	public int getTime() {
+		return timer;
+	}
+	
 }
