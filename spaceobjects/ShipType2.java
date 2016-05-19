@@ -1,5 +1,7 @@
 package spaceobjects;
 
+import javax.swing.ImageIcon;
+
 import field.GameField;
 import field.Location;
 
@@ -7,7 +9,8 @@ public class ShipType2 extends SpaceObject
 {
 
     public ShipType2(Location loc, GameField field) {
-		super(loc, field);
+		super(loc, 0, 0, field);
+		setImg(new ImageIcon("enemy_type_2.png").getImage());
         
     }
 
