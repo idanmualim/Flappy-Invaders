@@ -9,7 +9,6 @@ public class GameField {
 	private Player player;
 	private int score;
 	private int shipsDestroyed;
-	private int timer;
 	private boolean gameOver;
 	
 	public GameField() {
@@ -23,8 +22,7 @@ public class GameField {
 			playerBullets.get(b).move();
 		player.move();//TO BE EDITED moves player  HOW TO MAKE JUMP IDK
 		checkHit();
-		timer++;
-		score ++;
+		score ++; //should score be updated where timer is? or is here ok
 	}
 	
 	public void checkHit() {
