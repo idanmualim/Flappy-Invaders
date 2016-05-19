@@ -1,5 +1,7 @@
 package spaceobjects;
 
+import java.awt.Image;
+
 import field.GameField;
 import field.Location;
 
