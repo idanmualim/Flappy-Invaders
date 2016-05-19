@@ -8,6 +8,10 @@ public class GUI
     {
         control = controller;
     }
+    
+    public void paint(Graphics g) {
+       
+    }
 
     
 }
