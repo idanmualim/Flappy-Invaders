@@ -9,6 +9,7 @@ public class SpaceObject {
 	private int xSpeed, ySpeed;
 	private GameField gField;
 	private Hitbox HitBox;
+	private Image img;
 	
 	public SpaceObject() {}
 	
@@ -82,6 +83,14 @@ public class SpaceObject {
 	public Hitbox getHitBox()
 	{
 		return HitBox;
+	}
+	
+	public void setImg(Image image) {
+		img = image;
+	}
+	
+	public Image getImg() {
+		return img;
 	}
 	
 }
