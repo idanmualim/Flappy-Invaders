@@ -1,4 +1,4 @@
-package spaceobjects
+package spaceobjects;
 
     import field.GameField;
     import field.Location;
