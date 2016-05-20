@@ -9,7 +9,7 @@ public class ShipType2 extends SpaceObject
 {
 
     public ShipType2(Location loc, GameField field) {
-		super(loc, 0, 0, field);
+		super(loc, 0, 0, field, 27, 30);
 		setImg(new ImageIcon("enemy_type_2.png").getImage());
         
     }
