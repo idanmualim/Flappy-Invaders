@@ -5,7 +5,9 @@ import field.Location;
 
 public class Player extends SpaceObject{
 	
-	private final int INITIAL_VELOCITY = 5;
+	private final static int INITIAL_VELOCITY = //Initial upward velocity
+	private final static int WIDTH; //Horizontal length of ship
+	private final static int HEIGHT; //Vertical length of ship
 
 	public Player(Location loc, int xVel, int yVel, GameField field, int radius) {
 		super(loc, xVel, yVel, field, radius);
