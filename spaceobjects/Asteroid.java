@@ -9,7 +9,7 @@ public class Asteroid extends SpaceObject
     
     public Asteroids(Location loc, GameField field)
     {
-        super.(loc, MAXXVEL * Math.random(), MAXYVEL * Math.random(), field, WIDTH, HEIGHT);
+        super.(loc, (MAXXVEL * Math.random()) + 1, ((MAXYVEL * 2) * Math.random()) - MAXYVEL, field, WIDTH, HEIGHT);
     }
     
     public void act() {
