@@ -1,5 +1,5 @@
 /*
- * GuiTest4.java
+ * TestGUI.java
  *
  * Created on May 5, 2004
  *
@@ -17,7 +17,7 @@ import javax.swing.*;       // access to JFrame and JComponents
 
 // The class needs to extend JFrame; it also implements ActionListener to
 // support use of the timer
-public class GuiTest4 extends JFrame implements ActionListener{
+public class TestGUI extends JFrame implements ActionListener{
 
 	// instance variables
 	private Image fish;
@@ -26,7 +26,7 @@ public class GuiTest4 extends JFrame implements ActionListener{
 	private int fishX, fishY;	// location of fish on screen
 
 	/** Creates a new instance of gui_test - sets up GUI */
-	public GuiTest4() {
+	public TestGUI() {
 		// STEP 1: must call super() first
 		super("Demo Graphics: Lines, Rectangles, Ovals");
 
