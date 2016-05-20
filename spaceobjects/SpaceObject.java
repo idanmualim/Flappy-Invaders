@@ -15,7 +15,7 @@ public class SpaceObject {
 	
 	public SpaceObject() {}
 	
-	public SpaceObject(Location loc, int xVel, int yVel, GameField field, int radius) {
+	public SpaceObject(Location loc, int xVel, int yVel, GameField field, int length, int width) {
 		location = loc;
 		xSpeed = xVel;
 		ySpeed = yVel;
