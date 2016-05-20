@@ -20,7 +20,7 @@ public class SpaceObject {
 		xSpeed = xVel;
 		ySpeed = yVel;
 		gField = field;
-		HitBox = new Hitbox(loc, radius);
+		HitBox = new Hitbox(loc, width, length);
 	}
 	
 	public void act() {
