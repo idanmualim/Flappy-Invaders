@@ -10,6 +10,7 @@ public class GameField {
 	private int score;
 	private int shipsDestroyed;
 	private boolean gameOver;
+	private final int static FIELDWIDTH = //Insert width of field here.
 	
 	public GameField() {
 		gameOver = false;
@@ -22,6 +23,7 @@ public class GameField {
 			playerBullets.get(b).move();
 		player.move();//TO BE EDITED moves player  HOW TO MAKE JUMP IDK
 		checkHit();
+		removeOutOfBounds();
 		score ++; //should score be updated where timer is? or is here ok
 	}
 	
@@ -73,6 +75,22 @@ public class GameField {
 			if(iter.next().equals(b))
 				iter.remove();
 		}
+	}
+	
+	public void removeOutOfBounds()
+	{
+		for (int i = 0; i < objects.size(); i++)
+		{
+			if (objects.get(i).getLocation().getX() < 0)
+				remove(objects.get(i));
+		}
+		for (int a = 0; a < playerBullets.size(); a++)
+		{
+			if (playerBullets.get(i).getLocation().getX() > FIELDWIDTH)
+				remove(playerBullets.get(i));
+		}
+		if (player.getLocation().getY() < 0)
+			gameOver = true;
 	}
 	
 	public boolean isGameOver() {
