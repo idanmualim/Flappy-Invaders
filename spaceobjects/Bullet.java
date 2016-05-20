@@ -4,9 +4,9 @@ import field.Location;
 
 public class Bullet extends SpaceObject {
 
-	private final int SPEED; //Horizontal speed of bullet
-	private final int WIDTH; //Horizontal length of bullet
-	private final int HEIGHT; //Vertical length of bullet
+	private final static int SPEED; //Horizontal speed of bullet
+	private final static int WIDTH; //Horizontal length of bullet
+	private final static int HEIGHT; //Vertical length of bullet
 	
 	public Bullet(Location loc, GameField field, boolean firedByPlayer) {
 		if(firedByPlayer)
