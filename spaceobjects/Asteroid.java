@@ -11,5 +11,9 @@ public class Asteroid extends SpaceObject
     {
         super.(loc, MAXXVEL * Math.random(), MAXYVEL * Math.random(), field, WIDTH, HEIGHT);
     }
+    
+    public void act() {
+        move();
+    }
 
 }
