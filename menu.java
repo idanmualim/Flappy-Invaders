@@ -287,9 +287,6 @@ public class FlappyInvaders {
 				txtEnemyKills.setVisible(false);
 			}});
 
-		
-		
-		
 		JLabel background = new JLabel("");
 		Image img1 = new ImageIcon(this.getClass().getResource("backround.jpg")).getImage().getScaledInstance(1000, -1, 0);
 		background.setIcon(new ImageIcon(img1));
