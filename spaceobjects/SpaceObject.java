@@ -15,12 +15,12 @@ public class SpaceObject {
 	
 	public SpaceObject() {}
 	
-	public SpaceObject(Location loc, int xVel, int yVel, GameField field, int length, int width) {
+	public SpaceObject(Location loc, int xVel, int yVel, GameField field, int width, int height) {
 		location = loc;
 		xSpeed = xVel;
 		ySpeed = yVel;
 		gField = field;
-		HitBox = new Hitbox(loc, width, length);
+		HitBox = new Hitbox(loc, width, height);
 	}
 	
 	public void act() {
