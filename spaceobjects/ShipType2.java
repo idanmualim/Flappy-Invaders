@@ -14,9 +14,20 @@ public class ShipType2 extends SpaceObject
         
     }
 
-    public act()
+    public void act()
     {
-        //moves randomly towards player does not shoot
+        if(timer == 0) {
+		changeVelocity();
+		timer = 30;
+	}
+	else
+		timer--;
+        move();
+        
+    }
+    
+    public void changeVelocity() {
+    	//moves randomly towards player does not shoot
         //random movement generation
         int random1 = (Math.random()*2) + 1) // up or down
         if(random1 = 1)
@@ -24,7 +35,5 @@ public class ShipType2 extends SpaceObject
         else
             setYVel((Math.random() * 3)+1) //how fast up
         setXVel((Math.random() * 3)+1) //how fast forward
-        move();
-        
     }
 }
