@@ -13,6 +13,8 @@ public class GameField {
 	private final int static FIELDWIDTH = //Insert width of field here.
 	
 	public GameField() {
+		objects = new ArrayList<SpaceObject>();
+		playerBullets = new ArrayList<Bullet>();
 		gameOver = false;
 	}
 	
