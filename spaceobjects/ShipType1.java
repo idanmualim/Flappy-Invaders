@@ -9,7 +9,7 @@ import field.Location;
 
 public class ShipType1 extends SpaceObject
 {
-	private final int VELOCITY = 0; //ship stays in one place
+	private final static int VELOCITY = 0; //ship stays in one place
 	private int timer;
 
 	public ShipType1(Location loc, GameField field) {
