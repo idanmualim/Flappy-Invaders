@@ -25,6 +25,7 @@ public class SpaceObject {
 	
 	public void act() {
 		move();
+		changeVelocity();
 	}
 	
 	public void move() {
@@ -34,7 +35,6 @@ public class SpaceObject {
 		yVal += ySpeed;
 		location.setX(xVal);
 		location.setY(yVal);
-		changeVelocity();
 		
 	}
 	
