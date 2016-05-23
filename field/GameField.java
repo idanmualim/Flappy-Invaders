@@ -114,4 +114,16 @@ public class GameField {
 		return timer;
 	}
 	
+	public ArrayList<SpaceObject> getSpaceObjects() {
+		return objects;
+	}
+	
+	public ArrayList<Bullet> getPlayerBullets() {
+		return playerBullets;
+	}
+	
+	public Player getPlayer() {
+		return player;
+	}
+	
 }
