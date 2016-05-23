@@ -2,20 +2,38 @@ package spaceobjects;
 
 public class ShipType3 extends SpaceObject
 {
-    // instance variables - replace the example below with your own
     private int x;
+    private final static verticalVelocity = //Insert velocity here.
+    private final static WIDTH = //Insert horizontal length here.
+    private final static HEIGHT = //Insert vertical length here.
+    private final static FieldHeight = //Insert the height of the gamefield here.
+    private int timer;
 
-    /**
-     * Constructor for objects of class EnemyShip3
-     */
-    public ShipType3()
+    public ShipType3(Location loc, GameField field)
     {
-        // initialise instance variables
-        x = 0;
+        super(loc, 0, verticalVelocity, field, WIDTH, HEIGHT)
+        timer = 30;
     }
 
-    public act()
+    public void act()
     {
-        // same as EnemyShip2 but also shoots missiles
+        if (getLocation().getY() >= FieldHeight || getLocation().getY() <= 0)
+            changeVelocity();
+        else
+            move();
+        if(timer == 0) {
+			shoot();
+			timer = 30;
+		}
+		else
+			timer--;
+    }
+    
+    public void changeVelocity() {
+        if (getLocation.getY() >= FieldHeight)
+            setYVel(-verticalVelocity);
+        else if (getLocation.getY() <= 0)
+            setYVel(verticalVelocity);
+    }
     }
 }
