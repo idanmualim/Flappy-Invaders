@@ -13,9 +13,12 @@ public class GameField {
 	private final int static FIELDWIDTH = //Insert width of field here.
 	
 	public GameField() {
+		gameOver = false;
+		control = controller;
 		objects = new ArrayList<SpaceObject>();
 		playerBullets = new ArrayList<Bullet>();
-		gameOver = false;
+		player = new Player(new Location(40, 300), 0, 0, this);
+		addToField(player);
 	}
 	
 	public void step() {
