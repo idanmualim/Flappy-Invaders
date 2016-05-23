@@ -40,7 +40,7 @@ public class SpaceObject {
 	
 	public void shoot() {
 		Bullet b = new Bullet(getLocation(), false);
-		getGameField().addBulletToField(b);
+		getGameField().addToField(b);
 	}
 	
 	
