@@ -38,6 +38,11 @@ public class SpaceObject {
 		
 	}
 	
+	public void shoot() {
+		Bullet b = new Bullet(getLocation(), false);
+		getGameField().addBulletToField(b);
+	}
+	
 	
 	public void setLocation(Location loc) {
 		location = loc;
