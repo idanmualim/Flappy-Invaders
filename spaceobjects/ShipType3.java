@@ -7,10 +7,10 @@ import field.Location;
 public class ShipType3 extends SpaceObject
 {
     private int x;
-    private final static verticalVelocity = //Insert velocity here.
-    private final static WIDTH = //Insert horizontal length here.
-    private final static HEIGHT = //Insert vertical length here.
-    private final static FieldHeight = //Insert the height of the gamefield here.
+    private final static verticalVelocity = 5;//Insert velocity here.
+    private final static WIDTH = 31;//Insert horizontal length here.
+    private final static HEIGHT = 32;//Insert vertical length here.
+    private final static FieldHeight = 600;//Insert the height of the gamefield here.
     private int timer;
 
     public ShipType3(Location loc, GameField field)
