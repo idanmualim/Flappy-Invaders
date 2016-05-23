@@ -27,9 +27,5 @@ public class ShipType1 extends SpaceObject
 		else
 			timer--;
 	}
-	public void shoot()
-	{
-		Bullet b = new Bullet(getLocation(), false);
-		getGameField().addBulletToField(b);
-	}
+
 }
