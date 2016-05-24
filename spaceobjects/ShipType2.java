@@ -5,20 +5,21 @@ import field.Location;
 
 public class ShipType2 extends SpaceObject
 {
-
+	private final static int MOVERATE = 30;
 	int timer;
 	
     public ShipType2(Location loc, GameField field) {
 		super(loc, 0, 0, field, 27, 30);
 		setImg("enemy_type_2.png");
+		timer = MOVERATE;
         
     }
 
     public void act()
     {
-        if(timer == 0) {
+        if(timer <= 0) {
 		changeVelocity();
-		timer = 30;
+		timer = MOVERATE;
 	}
 	else
 		timer--;
