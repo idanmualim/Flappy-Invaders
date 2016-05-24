@@ -30,6 +30,7 @@ public class GameField {
 		checkHit();
 		removeOutOfBounds();
 		score ++; //should score be updated where timer is? or is here ok
+		control.updateGUI();
 	}
 	
 	public void checkHit() {
