@@ -16,15 +16,13 @@ public class ShipType1 extends SpaceObject
 
 	public void act()
 	{
-		move();
-		timer--;
-		if (timer <= 0)
-		{
+		if(timer <= 0) {
 			shoot();
 			timer = FIRERATE;
 		}
-			
-		
+		else
+			timer--;
+		move();
 	}
 
 }
