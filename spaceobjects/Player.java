@@ -7,7 +7,7 @@ import field.Location;
 
 public class Player extends SpaceObject{
 	
-	private final int INITIAL_VELOCITY = -5;
+	private final int INITIAL_VELOCITY = -8;
 
 	public Player(Location loc, int xVel, int yVel, GameField field) {
 		super(loc, xVel, yVel, field, 31, 22);
