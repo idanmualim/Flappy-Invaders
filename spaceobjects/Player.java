@@ -7,10 +7,10 @@ import field.Location;
 
 public class Player extends SpaceObject{
 	
-	private final int INITIAL_VELOCITY = 5;
+	private final int INITIAL_VELOCITY = -5;
 
 	public Player(Location loc, int xVel, int yVel, GameField field) {
-		super(loc, xVel, yVel, field, 0, 0);
+		super(loc, xVel, yVel, field, 31, 22);
 		setImg(new ImageIcon("src/enemy_type_1.png").getImage());
 	}
 	
@@ -24,7 +24,8 @@ public class Player extends SpaceObject{
 	}
 
 	public void shoot() {
-		Bullet b = new Bullet(getLocation(), true);
+		Location loc = getLocation();
+		Bullet b = new Bullet(new Location(loc.getX() + 31, loc.getY()), true);
 		getGameField().addBulletToField(b);
 		
 	}
