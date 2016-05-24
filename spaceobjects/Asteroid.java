@@ -1,4 +1,7 @@
-package spaceobject;
+package spaceobjects;
+
+import field.GameField;
+import field.Location;
 
 public class Asteroid extends SpaceObject
 {
@@ -9,7 +12,7 @@ public class Asteroid extends SpaceObject
     
     public Asteroid(Location loc, GameField field)
     {
-        super(loc, -(MAXXVEL * Math.random()) + 1, ((MAXYVEL * 2) * Math.random()) - MAXYVEL, field, WIDTH, HEIGHT);
+        super(loc, MAXXVEL, MAXYVEL, field, WIDTH, HEIGHT);
     }
     
     public void act() {
