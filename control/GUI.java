@@ -40,7 +40,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 		
 		setVisible(true);
 		
-		Timer timer = new Timer(50, this);
+		Timer timer = new Timer(17, this);
 		timer.start();
 	}
 
