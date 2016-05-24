@@ -31,7 +31,7 @@ public class ShipType2 extends SpaceObject
     public void changeVelocity() {
     	//moves randomly towards player does not shoot
         //random movement generation
-        int random1 = (int) ((Math.random()*2) + 1)) // up or down
+        int random1 = (int) ((Math.random()*2) + 1)); // up or down
         if(random1 == 1)
             setYVel((int) (-(Math.random() * 3)+1)); //how fast down, change if numbers are too small
         else
