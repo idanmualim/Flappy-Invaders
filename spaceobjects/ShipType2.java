@@ -1,39 +1,41 @@
 package spaceobjects;
-
 import field.GameField;
 import field.Location;
 
-public class ShipType2 extends SpaceObject
+public class ShipType3 extends SpaceObject
 {
 
-	int timer;
-	
-    public ShipType2(Location loc, GameField field) {
-		super(loc, 0, 0, field, 27, 30);
-		setImg("enemy_type_2.png");
-        
+    private static final int verticalVelocity = 5;//Insert velocity here.
+    private final static int WIDTH = 31;//Insert horizontal length here.
+    private final static int HEIGHT = 32;//Insert vertical length here.
+    private final static int FieldHeight = 600;//Insert the height of the gamefield here.
+    private int timer;
+
+    public ShipType3(Location loc, GameField field)
+    {
+        super(loc, 0, verticalVelocity, field, WIDTH, HEIGHT);
+        setImg("enemy_type_1.png");
+        timer = 30;
     }
 
     public void act()
     {
+        if (getLocation().getY() >= FieldHeight || getLocation().getY() <= 0)
+            changeVelocity();
+        else
+            move();
         if(timer == 0) {
-		changeVelocity();
-		timer = 30;
-	}
-	else
-		timer--;
-        move();
-        
+			//shoot(); need to implement this method
+			timer = 30;
+		}
+		else
+			timer--;
     }
     
     public void changeVelocity() {
-    	//moves randomly towards player does not shoot
-        //random movement generation
-        int random1 = (int) ((Math.random()*2) + 1); // up or down
-        if(random1 == 1)
-            setYVel((int) (-(Math.random() * 3)+1)); //how fast down, change if numbers are too small
-        else
-            setYVel((int) ((Math.random() * 3)+1)); //how fast up
-        setXVel((int) ((Math.random() * 3)+1)); //how fast forward
+        if (getLocation().getY() >= FieldHeight)
+            setYVel(-verticalVelocity);
+        else if (getLocation().getY() <= 0)
+            setYVel(verticalVelocity);
     }
 }
