@@ -9,8 +9,6 @@ import spaceobjects.Bullet;
 import spaceobjects.Player;
 import spaceobjects.SpaceObject;
 
-import spaceobjects.SpaceObject;
-
 public class GameField {
 
 	private ArrayList<SpaceObject> objects;
@@ -18,12 +16,13 @@ public class GameField {
 	private Player player;
 	private int score;
 	private int shipsDestroyed;
-	private boolean gameOver;
+	private int shotsFired;
+	private int time;
 	Controller control;
 	private static final int FIELDWIDTH = 600; //Insert width of field here.
+	private static final int FIELDHEIGHT = 600;
 	
 	public GameField(Controller controller) {
-		gameOver = false;
 		control = controller;
 		objects = new ArrayList<SpaceObject>();
 		playerBullets = new ArrayList<Bullet>();
@@ -36,10 +35,12 @@ public class GameField {
 			objects.get(i).move();
 		for (int b = 0; b < playerBullets.size(); b++)//Moves all player bullets
 			playerBullets.get(b).move();
-		player.move();//TO BE EDITED moves player  HOW TO MAKE JUMP IDK
+		player.act();
 		checkHit();
 		removeOutOfBounds();
-		score ++; //should score be updated where timer is? or is here ok
+		
+		score++;
+		time ++;
 		control.updateGUI();
 	}
 	
@@ -65,7 +66,7 @@ public class GameField {
 		for (int b = 0; b < objects.size(); b++)
 		{
 			if (player.getHitBox().checkCollision(objects.get(b).getHitBox()))
-				gameOver = true; 
+				control.onGameOver();
 		}
 	}
 	
@@ -75,12 +76,13 @@ public class GameField {
 	
 	public void addBulletToField(Bullet toAdd) {
 		playerBullets.add(toAdd);
+		shotsFired++;
 	}
 	
 	public void remove(SpaceObject toRemove) {
 		Iterator<SpaceObject> iter = objects.iterator();
 		while(iter.hasNext()) {
-			if(iter.next().equals(toRemove))
+			if(iter.next() == toRemove)
 				iter.remove();
 		}
 	}
@@ -105,12 +107,10 @@ public class GameField {
 			if (playerBullets.get(i).getLocation().getX() > FIELDWIDTH)
 				remove(playerBullets.get(i));
 		}
-		if (player.getLocation().getY() < 0)
-			gameOver = true;
-	}
-	
-	public boolean isGameOver() {
-		return gameOver;
+		if (player.getLocation().getY() > FIELDHEIGHT) {
+			remove(player);
+			control.onGameOver();
+		}
 	}
 	
 	public int getScore() {
@@ -119,6 +119,14 @@ public class GameField {
 	
 	public int getShipsDestroyed() {
 		return shipsDestroyed;
+	}
+	
+	public int getShotsFired() {
+		return shotsFired;
+	}
+	
+	public double getTime() {
+		return time;
 	}
 	
 	public ArrayList<SpaceObject> getSpaceObjects() {
