@@ -20,13 +20,29 @@ public class Controller {
         graphicsUserInt = gui;
     }
     
+    public GUI getGUI() {
+    	return graphicsUserInt;
+    }
+    
     public void updateGUI() {
     	graphicsUserInt.repaint();
     }
     
     public void initField() {
+    	graphicsUserInt.requestFocusInWindow();
     	field = new GameField(this);
     	inPlay = true;
+    }
+    
+    public void onGameOver() {
+    	inPlay = false;
+    	int arg1 = field.getScore();
+    	int arg2 = field.getShipsDestroyed();
+    	int arg3 = 0;
+    	if(field.getShotsFired() != 0)
+    		arg3 = (int) arg2 / field.getShotsFired();
+    	double arg4 = (double) field.getTime() / 20;
+    	graphicsUserInt.displayGameOver(arg1, arg2, arg3, arg4);
     }
     
     public void step() {
