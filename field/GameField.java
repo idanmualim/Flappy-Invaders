@@ -1,4 +1,13 @@
+package field;
+
 import java.util.ArrayList;
+import java.util.Iterator;
+
+import control.Controller;
+import spaceobjects.Asteroid;
+import spaceobjects.Bullet;
+import spaceobjects.Player;
+import spaceobjects.SpaceObject;
 
 import spaceobjects.SpaceObject;
 
