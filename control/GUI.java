@@ -34,6 +34,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 		setBounds(100, 100, 600, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
+		getContentPane().setBackground(Color.BLACK);
 		
 		addKeyListener(this);
 		displayMenu();
