@@ -1,17 +1,20 @@
 package spaceobjects;
 
+import field.GameField;
+import field.Location;
+
 public class Missile extends SpaceObject
 {
-    private final int WIDTH = 20;//put width (horizontal length) of missile hitbox here
-    private final int HEIGHT = 5;//put height (vertical length) of missile hitbox here
-    private final int INITIALXSPEED = 5;//put initial horizontal speed here (Make sure it's negative)
-    private final int ACCELERATION = 3;//put acceleration of missile to the left. (Make sure it's negative)
+    private static final int WIDTH = 20;//put width (horizontal length) of missile hitbox here
+    private static final int HEIGHT = 5;//put height (vertical length) of missile hitbox here
+    private static final int INITIALXSPEED = 5;//put initial horizontal speed here (Make sure it's negative)
+    private static final int ACCELERATION = 3;//put acceleration of missile to the left. (Make sure it's negative)
     private int xSpeed;
     
-    public Missiles(Location loc, GameField field)
+    public Missile(Location loc, GameField field)
     {
+    	super(loc, XSPEED, 0, field, WIDTH, HEIGHT);
         xSpeed = INITIALXSPEED;
-        super(loc, XSPEED, 0, field, WIDTH, HEIGHT);
     }
     
     public void changeVelocity()
