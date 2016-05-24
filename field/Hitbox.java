@@ -2,8 +2,9 @@ package field;
 
 public class Hitbox
 {
-    private int x;
-    private int y;
+	Location loc;
+	private int x;
+	private int y;
     
     public Hitbox(Location location, int width, int height)
     {
