@@ -8,8 +8,8 @@ public class Hitbox
     public Hitbox(Location location, int width, int height)
     {
     	loc = location;
-	x = width;
-	y = height;
+	x = width - 1;
+	y = height - 1;
 	
     }
     
