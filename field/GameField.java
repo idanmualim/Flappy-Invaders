@@ -32,9 +32,9 @@ public class GameField {
 	
 	public void step() {
 		for (int i = 0; i < objects.size(); i++) //Moves all enemy SpaceObjects
-			objects.get(i).move();
+			objects.get(i).act();
 		for (int b = 0; b < playerBullets.size(); b++)//Moves all player bullets
-			playerBullets.get(b).move();
+			playerBullets.get(b).act();
 		player.act();
 		checkHit();
 		removeOutOfBounds();
@@ -51,11 +51,11 @@ public class GameField {
 			{
 				if (playerBullets.get(i).getHitBox().checkCollision(objects.get(z).getHitBox()))
 				{
-					removeBullet(playerBullets.get(i));
+					playerBullets.remove(i);
 					i--;
 					if (!(objects.get(z) instanceof Asteroid))//Destroyed SpaceObject if it's not an asteroid
 					{
-						remove(objects.get(z));
+						objects.remove(z);
 						z--;
 						score += 50;
 						shipsDestroyed++;
@@ -100,12 +100,12 @@ public class GameField {
 		for (int i = 0; i < objects.size(); i++)
 		{
 			if (objects.get(i).getLocation().getX() < 0)
-				remove(objects.get(i));
+				objects.remove(i);
 		}
 		for (int i = 0; i < playerBullets.size(); i++)
 		{
 			if (playerBullets.get(i).getLocation().getX() > FIELDWIDTH)
-				remove(playerBullets.get(i));
+				playerBullets.remove(i);
 		}
 		if (player.getLocation().getY() > FIELDHEIGHT) {
 			remove(player);
