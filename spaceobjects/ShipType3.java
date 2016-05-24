@@ -1,6 +1,4 @@
 package spaceobjects;
-import javax.swing.ImageIcon;
-
 import field.GameField;
 import field.Location;
 
@@ -16,7 +14,7 @@ public class ShipType3 extends SpaceObject
     public ShipType3(Location loc, GameField field)
     {
         super(loc, 0, verticalVelocity, field, WIDTH, HEIGHT);
-        setImg(new ImageIcon("enemy_type_1.png").getImage());
+        setImg("enemy_type_1.png");
         timer = 30;
     }
 
