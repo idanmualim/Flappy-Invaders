@@ -3,6 +3,7 @@ package spaceobjects;
 import java.awt.Image;
 
 import field.GameField;
+import field.Hitbox;
 import field.Location;
 
 public class SpaceObject {
@@ -10,7 +11,7 @@ public class SpaceObject {
 	private Location location;
 	private int xSpeed, ySpeed;
 	private GameField gField;
-	private Hitbox HitBox;
+	private Hitbox hitbox;
 	private Image img;
 	
 	public SpaceObject() {}
@@ -20,12 +21,11 @@ public class SpaceObject {
 		xSpeed = xVel;
 		ySpeed = yVel;
 		gField = field;
-		HitBox = new Hitbox(loc, width, height);
+		hitbox = new Hitbox(loc, width, height);
 	}
 	
 	public void act() {
 		move();
-		changeVelocity();
 	}
 	
 	public void move() {
@@ -33,14 +33,10 @@ public class SpaceObject {
 		int yVal = location.getY();
 		xVal += xSpeed;
 		yVal += ySpeed;
-		location.setX(xVal);
-		location.setY(yVal);
+		location.setLocation(xVal, yVal);
+		hitbox.changeLocation(xVal, yVal);
+		changeVelocity();
 		
-	}
-	
-	public void shoot() {
-		Bullet b = new Bullet(getLocation(), false);
-		getGameField().addToField(b);
 	}
 	
 	
@@ -87,9 +83,13 @@ public class SpaceObject {
 		return gField;
 	}
 	
+	public void setHitbox(Hitbox h) {
+		hitbox = h;
+	}
+	
 	public Hitbox getHitBox()
 	{
-		return HitBox;
+		return hitbox;
 	}
 	
 	public void setImg(Image image) {
