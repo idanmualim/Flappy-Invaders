@@ -2,6 +2,8 @@ package spaceobjects;
 
 import java.awt.Image;
 
+import javax.swing.ImageIcon;
+
 import field.GameField;
 import field.Hitbox;
 import field.Location;
@@ -92,8 +94,8 @@ public class SpaceObject {
 		return hitbox;
 	}
 	
-	public void setImg(Image image) {
-		img = image;
+	public void setImg(String path) {
+		img = new ImageIcon(getClass().getClassLoader().getResource(path)).getImage();
 	}
 	
 	public Image getImg() {
