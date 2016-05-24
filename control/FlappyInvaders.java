@@ -1,3 +1,5 @@
+package control;
+
 public class FlappyInvaders
 {
     public static void main(String[] args)
