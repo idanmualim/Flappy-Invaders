@@ -19,9 +19,10 @@ public class GameField {
 	private int score;
 	private int shipsDestroyed;
 	private boolean gameOver;
-	private final int static FIELDWIDTH = //Insert width of field here.
+	Controller control;
+	private static final int FIELDWIDTH = 600; //Insert width of field here.
 	
-	public GameField() {
+	public GameField(Controller controller) {
 		gameOver = false;
 		control = controller;
 		objects = new ArrayList<SpaceObject>();
@@ -51,7 +52,7 @@ public class GameField {
 				{
 					removeBullet(playerBullets.get(i));
 					i--;
-					if (!(objects.get(z) instanceOf Asteroid))//Destroyed SpaceObject if it's not an asteroid
+					if (!(objects.get(z) instanceof Asteroid))//Destroyed SpaceObject if it's not an asteroid
 					{
 						remove(objects.get(z));
 						z--;
@@ -99,7 +100,7 @@ public class GameField {
 			if (objects.get(i).getLocation().getX() < 0)
 				remove(objects.get(i));
 		}
-		for (int a = 0; a < playerBullets.size(); a++)
+		for (int i = 0; i < playerBullets.size(); i++)
 		{
 			if (playerBullets.get(i).getLocation().getX() > FIELDWIDTH)
 				remove(playerBullets.get(i));
@@ -118,10 +119,6 @@ public class GameField {
 	
 	public int getShipsDestroyed() {
 		return shipsDestroyed;
-	}
-	
-	public int getTime() {
-		return timer;
 	}
 	
 	public ArrayList<SpaceObject> getSpaceObjects() {
