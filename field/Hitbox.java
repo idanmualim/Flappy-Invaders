@@ -17,10 +17,6 @@ public class Hitbox
     {
         loc.setLocation(x, y);
     }
-    
-    public double getRadius() {
-        return radius;
-    }
 
     public int getWidth() {
 	return x;
