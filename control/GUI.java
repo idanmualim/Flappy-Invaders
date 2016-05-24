@@ -47,7 +47,6 @@ public class GUI extends JFrame implements KeyListener, ActionListener
 			ArrayList<SpaceObject> spaceObjects = control.getObjectList();
 			ArrayList<Bullet> bullets = control.getBulletList();
 			
-			System.out.println(spaceObjects.size());
 			for(SpaceObject o : spaceObjects) {
 				g.drawImage(o.getImg(), o.getLocation().getX(), o.getLocation().getY(), this);
 			}
@@ -64,6 +63,7 @@ public class GUI extends JFrame implements KeyListener, ActionListener
 			control.onPressUp();
 		else if(keyCode == KeyEvent.VK_SPACE)
 			control.onPressSpace();
+		System.out.println("Boop!");
 	}
 
 	@Override
@@ -82,7 +82,6 @@ public class GUI extends JFrame implements KeyListener, ActionListener
 	public void actionPerformed(ActionEvent e) {
 		if(control.isInPlay()) {
 			control.step();
-			//System.out.println("In play!");
 		}
 	}
 	
@@ -152,9 +151,7 @@ public class GUI extends JFrame implements KeyListener, ActionListener
 
 
 		JLabel lblGameOver = new JLabel("");
-		ImageIcon tmp =  new ImageIcon(this.getClass().getClassLoader().getResource("game_over.png"));
-		Image imgG = tmp.getImage().getScaledInstance(250, -1, 0);
-		//Image imgG = new ImageIcon(this.getClass().getResource("game_over.png")).getImage().getScaledInstance(250, -1, 0);
+		Image imgG = new ImageIcon(this.getClass().getClassLoader().getResource("game_over.png")).getImage().getScaledInstance(250, -1, 0);
 		lblGameOver.setIcon(new ImageIcon(imgG));
 		lblGameOver.setBounds(173, 0, 267, 231);
 		frame.getContentPane().add(lblGameOver);
