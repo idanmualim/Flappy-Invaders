@@ -6,7 +6,11 @@ import java.util.Iterator;
 import control.Controller;
 import spaceobjects.Asteroid;
 import spaceobjects.Bullet;
+import spaceobjects.Missile;
 import spaceobjects.Player;
+import spaceobjects.ShipType1;
+import spaceobjects.ShipType2;
+import spaceobjects.ShipType3;
 import spaceobjects.SpaceObject;
 
 public class GameField {
@@ -146,7 +150,7 @@ public class GameField {
 	
 	public void spawnRandom()
 	{
-		id = Math.random() * 5;
+		int id = (int)(Math.random() * 5);
 		switch (id) {
 			case 0: spawnEnemy("Asteroid");
 				break;
@@ -162,7 +166,7 @@ public class GameField {
 	}
 	
 	public void spawnEnemy(String name) {
-		Location spawnLoc = new Location(ENEMYSPAWNXCOOR, Math.random() * FIELDHEIGHT);
+		Location spawnLoc = new Location(ENEMYSPAWNXCOOR, (int)(Math.random() * FIELDHEIGHT));
 		switch (name) {
 			case "Asteroid": 
 				Asteroid asteroid = new Asteroid(spawnLoc, this);
