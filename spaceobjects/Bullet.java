@@ -1,18 +1,26 @@
 package spaceobjects;
 
+import javax.swing.ImageIcon;
+
+import field.Hitbox;
 import field.Location;
 
 public class Bullet extends SpaceObject {
 
-	private final static int SPEED = 15; //Horizontal speed of bullet
-	private final static int WIDTH = 5; //Horizontal length of bullet
-	private final static int HEIGHT = 2; //Vertical length of bullet
+	private final int DEFAULT_SPEED = 10;
 	
-	public Bullet(Location loc, GameField field, boolean firedByPlayer) {
+	public Bullet(Location loc, boolean firedByPlayer) {
+		setHitbox(new Hitbox(loc, 5, 4));
+		setLocation(loc);
+		setImg(new ImageIcon("src/bullet.png").getImage());
 		if(firedByPlayer)
-			super(loc, SPEED, 0, field, WIDTH, HEIGHT)
+			setXVel(DEFAULT_SPEED);
 		else
-			super(loc, -SPEED, 0, field, WIDTH, HEIGHT)
+			setXVel(-DEFAULT_SPEED);
+	}
+	
+	public void act() {
+		move();
 	}
 	
 }
