@@ -102,4 +102,11 @@ public class SpaceObject {
 		return img;
 	}
 	
+	public void shoot() {
+		Location loc = getLocation();
+		Bullet b = new Bullet(new Location(loc.getX() - 1, loc.getY()), false);
+		getGameField().addToField(b);
+		
+	}
+	
 }
