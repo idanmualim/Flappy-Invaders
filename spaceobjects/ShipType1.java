@@ -17,12 +17,7 @@ public class ShipType1 extends SpaceObject
 
 	public void act()
 	{
-		if(timer == 0) {
-			shoot();
-			timer = 30;
-		}
-		else
-			timer--;
+		//Functionality: stays in one place, shoots periodically
 	}
 
 }
