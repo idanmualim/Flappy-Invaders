@@ -179,18 +179,6 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 			}
 		});
 
-
-
-		
-
-
-
-
-		/*JLabel background = new JLabel("");
-		Image img1 = new ImageIcon(this.getClass().getResource("backround.jpg")).getImage().getScaledInstance(1000, -1, 0);
-		background.setIcon(new ImageIcon(img1));
-		background.setBounds(0, -23, 615, 446);
-		frame.getContentPane().add(background);	*/
 	}
 	
 	public void displayGameOver(int score, int killed, int accuracy, double time) {
