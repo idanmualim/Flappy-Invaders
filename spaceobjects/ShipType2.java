@@ -9,7 +9,7 @@ public class ShipType2 extends SpaceObject
 	int timer;
 	
     public ShipType2(Location loc, GameField field) {
-		super(loc, 0, 0, field, 27, 30);
+		super(loc, 0, 0, field, 54, 60);
 		setImg("enemy_type_2.png");
 		timer = MOVERATE;
         
