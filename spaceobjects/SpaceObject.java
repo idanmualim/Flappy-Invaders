@@ -41,6 +41,13 @@ public class SpaceObject {
 		
 	}
 	
+	public void shoot() {
+		Location loc = getLocation();
+		Bullet b = new Bullet(new Location(loc.getX() - 1, loc.getY() + (hitbox.getHeight() / 2)), false);
+		getGameField().addToField(b);
+		
+	}
+	
 	
 	public void setLocation(Location loc) {
 		location = loc;
@@ -100,13 +107,6 @@ public class SpaceObject {
 	
 	public Image getImg() {
 		return img;
-	}
-	
-	public void shoot() {
-		Location loc = getLocation();
-		Bullet b = new Bullet(new Location(loc.getX() - 1, loc.getY()), false);
-		getGameField().addToField(b);
-		
 	}
 	
 }
