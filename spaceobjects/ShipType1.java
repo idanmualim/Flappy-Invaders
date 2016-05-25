@@ -10,7 +10,7 @@ public class ShipType1 extends SpaceObject
 
 	public ShipType1(Location loc, GameField field) {
 		super(loc, 0, 0, field, 62, 44);
-		setImg("enemy_type_1.png");
+		setImg("ship1.png");
 		timer = FIRERATE;
 	}
 
