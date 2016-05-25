@@ -17,6 +17,7 @@ public class ShipType1 extends SpaceObject
 	public void act()
 	{
 		move();
+		//moves in from offscreen before stopping
 		if(getXVel() < 0) {
 			setXVel(getXVel() + 0.7);
 			timer = FIRERATE;
