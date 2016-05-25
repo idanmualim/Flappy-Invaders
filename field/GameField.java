@@ -25,7 +25,7 @@ public class GameField {
 	private Controller control;
 	private static final int FIELDWIDTH = 600; //Insert width of field here.
 	private static final int FIELDHEIGHT = 600;
-	private static final int ENEMYSPAWNXCOOR = 560;//This is the x-coordinate that the enemies spawn at.
+	private static final int ENEMYSPAWNXCOOR = 680;//This is the x-coordinate that the enemies spawn at. (offscreen)
 	private static final int SPAWNRATE = 25; //Respawns new enemy every x ticks, can be modified to increase over time
 	
 	public GameField(Controller controller) {
