@@ -32,9 +32,9 @@ public class ShipType2 extends SpaceObject
         //random movement generation
         int random1 = (int) ((Math.random()*2) + 1); // up or down
         if(random1 == 1)
-            setYVel((int) -((Math.random() * 5) + 5)); //how fast down, change if numbers are too small
+            setYVel(-(Math.random() * 5 + 5)); //how fast down, change if numbers are too small
         else
-            setYVel((int) ((Math.random() * 5) + 5)); //how fast up
-        setXVel((int) -((Math.random() * 5) + 5)); //how fast forward
+            setYVel(Math.random() * 5 + 5); //how fast up
+        setXVel(-(Math.random() * 5) + 5); //how fast forward
     }
 }
