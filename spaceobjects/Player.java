@@ -9,7 +9,7 @@ public class Player extends SpaceObject{
 	double trueYVel;
 
 	public Player(Location loc, int xVel, int yVel, GameField field) {
-		super(loc, xVel, yVel, field, 31, 22);
+		super(loc, xVel, yVel, field, 62, 44);
 		setImg("enemy_type_1.png");
 	}
 	
