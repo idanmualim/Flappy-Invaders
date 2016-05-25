@@ -26,7 +26,9 @@ public class GameField {
 	private static final int FIELDWIDTH = 600; //Insert width of field here.
 	private static final int FIELDHEIGHT = 600;
 	private static final int ENEMYSPAWNXCOOR = 680;//This is the x-coordinate that the enemies spawn at. (offscreen)
-	private static final int SPAWNRATE = 25; //Respawns new enemy every x ticks, can be modified to increase over time
+	private static final int ENEMYSPAWNYRANGE = 472; //Enemies can spawn in an area of 472 pixels between
+														//the top and bottom of the field
+	private static final int SPAWNRATE = 60; //Respawns new enemy every x ticks, can be modified to increase over time
 	
 	public GameField(Controller controller) {
 		control = controller;
@@ -52,10 +54,11 @@ public class GameField {
 	}
 	
 	public void checkHit() {
-		for (int i = 0; i < playerBullets.size(); i++)//Checks for collisions between player fired bullets and enemy objects.
+		for (int z = 0; z < objects.size(); z++)
 		{
-			for (int z = 0; z < objects.size(); z++)
+			for (int i = 0; i < playerBullets.size(); i++)//Checks for collisions between player fired bullets and enemy objects.
 			{
+				
 				if (playerBullets.get(i).getHitBox().checkCollision(objects.get(z).getHitBox()))
 				{
 					playerBullets.remove(i);
@@ -106,8 +109,10 @@ public class GameField {
 	{
 		for (int i = 0; i < objects.size(); i++)
 		{
-			if (objects.get(i).getLocation().getX() < 0)
+			if (objects.get(i).getLocation().getX() < 0 || objects.get(i).getLocation().getY() > FIELDHEIGHT) {
 				objects.remove(i);
+				i--;
+			}
 		}
 		for (int i = 0; i < playerBullets.size(); i++)
 		{
@@ -166,7 +171,7 @@ public class GameField {
 	}
 	
 	public void spawnEnemy(String name) {
-		Location spawnLoc = new Location(ENEMYSPAWNXCOOR, (int)(Math.random() * FIELDHEIGHT));
+		Location spawnLoc = new Location(ENEMYSPAWNXCOOR, (int)(Math.random() * ENEMYSPAWNYRANGE) + 64);
 		switch (name) {
 			case "Asteroid": 
 				Asteroid asteroid = new Asteroid(spawnLoc, this);
