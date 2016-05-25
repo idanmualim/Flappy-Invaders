@@ -37,8 +37,8 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 		getContentPane().setBackground(Color.BLACK);
 		
 		addKeyListener(this);
-		displayMenu();
 		
+		displayMenu();
 		setVisible(true);
 		
 		Timer timer = new Timer(17, this);
@@ -270,6 +270,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 		txtAcc.setVisible(true);
 		txtScore.setVisible(true);
 		txtEnemyKills.setVisible(true);
+		btnPlayAgain.requestFocusInWindow();
 		
 		btnBmenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
