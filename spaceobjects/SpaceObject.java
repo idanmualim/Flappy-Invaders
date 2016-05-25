@@ -11,7 +11,7 @@ import field.Location;
 public class SpaceObject {
 
 	private Location location;
-	private int xSpeed, ySpeed;
+	private double xSpeed, ySpeed;
 	private GameField gField;
 	private Hitbox hitbox;
 	private Image img;
@@ -31,12 +31,12 @@ public class SpaceObject {
 	}
 	
 	public void move() {
-		int xVal = location.getX();
-		int yVal = location.getY();
+		double xVal = location.getX();
+		double yVal = location.getY();
 		xVal += xSpeed;
 		yVal += ySpeed;
-		location.setLocation(xVal, yVal);
-		hitbox.changeLocation(xVal, yVal);
+		location.setLocation((int)xVal, (int)yVal);
+		hitbox.changeLocation((int)xVal, (int)yVal);
 		changeVelocity();
 		
 	}
@@ -62,25 +62,25 @@ public class SpaceObject {
 		//This is to be modified in children classes that have dynamic velocities
 	}
 	
-	public void setXVel(int velocity) {
+	public void setXVel(double velocity) {
 		xSpeed = velocity;
 	}
 	
 	/**
 	 * @return Velocity in X direction
 	 */
-	public int getXVel() {
+	public double getXVel() {
 		return xSpeed;
 	}
 	
-	public void setYVel(int velocity) {
+	public void setYVel(double velocity) {
 		ySpeed = velocity;
 	}
 	
 	/**
 	 * @return Velocity in Y direction
 	 */
-	public int getYVel() {
+	public double getYVel() {
 		return ySpeed;
 	}
 	
