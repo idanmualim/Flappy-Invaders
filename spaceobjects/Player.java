@@ -1,13 +1,12 @@
 package spaceobjects;
 
-import javax.swing.ImageIcon;
-
 import field.GameField;
 import field.Location;
 
 public class Player extends SpaceObject{
 	
-	private final int INITIAL_VELOCITY = -8;
+	private final int INITIAL_VELOCITY = -10;
+	double trueYVel;
 
 	public Player(Location loc, int xVel, int yVel, GameField field) {
 		super(loc, xVel, yVel, field, 31, 22);
@@ -15,17 +14,19 @@ public class Player extends SpaceObject{
 	}
 	
 	public void act() {
-		setYVel(getYVel() + 1);
+		trueYVel += 0.5;
+		setYVel((int)trueYVel);
 		move();
 	}
 	
 	public void bounce() {
+		trueYVel = INITIAL_VELOCITY;
 		setYVel(INITIAL_VELOCITY);
 	}
 
 	public void shoot() {
 		Location loc = getLocation();
-		Bullet b = new Bullet(new Location(loc.getX() + 31, loc.getY()), true);
+		Bullet b = new Bullet(new Location(loc.getX() + 31, loc.getY() + 11), true);
 		getGameField().addBulletToField(b);
 		
 	}
