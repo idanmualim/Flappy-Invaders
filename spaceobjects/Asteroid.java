@@ -5,8 +5,8 @@ import field.Location;
 
 public class Asteroid extends SpaceObject
 {
-    private final static int WIDTH = 27;//Place width (horizontal size) of asteroid here.
-    private final static int HEIGHT = 26;//Place height (vertical size) of asteroid here.
+    private final static int WIDTH = 54;//Place width (horizontal size) of asteroid here.
+    private final static int HEIGHT = 52;//Place height (vertical size) of asteroid here.
     private final static int MINXVEL = 5; //Place maximum x velocity here
     private final static int MINYVEL = -2; //Place maximum y velocity here
     
