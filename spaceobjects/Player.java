@@ -11,7 +11,7 @@ public class Player extends SpaceObject{
 
 	public Player(Location loc, int xVel, int yVel, GameField field) {
 		super(loc, xVel, yVel, field, 62, 44);
-		setImg("enemy_type_1.png");
+		setImg("ship1.png");
 	}
 	
 	public void act() {
