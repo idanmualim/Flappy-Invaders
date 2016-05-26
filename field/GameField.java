@@ -29,6 +29,7 @@ public class GameField {
 	private static final int ENEMYSPAWNYRANGE = 472; //Enemies can spawn in an area of 472 pixels between
 														//the top and bottom of the field
 	private static final int SPAWNRATE = 60; //Respawns new enemy every x ticks, can be modified to increase over time
+	private static final int DESPAWNX = -60; //The x-coordinate at which enemy ships despawn (This will insure that sprites leave the screen before despawning)
 	
 	public GameField(Controller controller) {
 		control = controller;
@@ -109,7 +110,7 @@ public class GameField {
 	{
 		for (int i = 0; i < objects.size(); i++)
 		{
-			if (objects.get(i).getLocation().getX() < 0 || objects.get(i).getLocation().getY() > FIELDHEIGHT) {
+			if (objects.get(i).getLocation().getX() < DESPAWNX || objects.get(i).getLocation().getY() > FIELDHEIGHT) {
 				objects.remove(i);
 				i--;
 			}
