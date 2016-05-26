@@ -29,8 +29,8 @@ public class ShipType3 extends SpaceObject
     	
         if (getLocation().getY() >= MAXIMUM_HEIGHT || getLocation().getY() <= MINIMUM_HEIGHT)
             changeVelocity();
-        else
-            move();
+        move();
+        
         if(timer == 0) {
 			shoot();
 			timer = FIRERATE;
@@ -42,7 +42,7 @@ public class ShipType3 extends SpaceObject
     public void changeVelocity() {
         if (getLocation().getY() >= MAXIMUM_HEIGHT)
             setYVel(-verticalVelocity);
-        else if (getLocation().getY() <= 0)
+        else if (getLocation().getY() <= MINIMUM_HEIGHT)
             setYVel(verticalVelocity);
     }
 }
