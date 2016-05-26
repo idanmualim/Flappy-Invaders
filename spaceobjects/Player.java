@@ -5,7 +5,8 @@ import field.Location;
 
 public class Player extends SpaceObject{
 	
-	private final int INITIAL_VELOCITY = -8;
+	private final static int INITIAL_VELOCITY = -8;
+	private final static int CEILING = 64;
 	double trueYVel;
 
 	public Player(Location loc, int xVel, int yVel, GameField field) {
@@ -16,6 +17,8 @@ public class Player extends SpaceObject{
 	public void act() {
 		trueYVel += 0.3;
 		setYVel((int)trueYVel);
+		if (getLocation().getY() <= CEILING)
+			setYVel(0);
 		move();
 	}
 	
