@@ -35,6 +35,6 @@ public class ShipType2 extends SpaceObject
             setYVel(-(Math.random() * 5 + 5)); //how fast down, change if numbers are too small
         else
             setYVel(Math.random() * 5 + 5); //how fast up
-        setXVel(-(Math.random() * 5) + 5); //how fast forward
+        setXVel(-(Math.random() * 5 + 5)); //how fast forward
     }
 }
