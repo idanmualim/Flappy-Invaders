@@ -15,6 +15,7 @@ public class Missile extends SpaceObject
     {
     	super(loc, INITXSPEED, 0, field, WIDTH, HEIGHT);
     	xSpeed = INITXSPEED;
+    	setImg("missile.png");
     }
     
     public void act()
