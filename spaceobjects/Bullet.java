@@ -10,15 +10,19 @@ public class Bullet extends SpaceObject {
 	public Bullet(Location loc, boolean firedByPlayer) {
 		setHitbox(new Hitbox(loc, 10, 8));
 		setLocation(loc);
-		setImg("bullet.png");
-		if(firedByPlayer)
+		if(firedByPlayer) {
 			setXVel(DEFAULT_SPEED);
-		else
+			setImg("bullet.png");
+		}
+		else {
 			setXVel(-DEFAULT_SPEED);
+			setImg("enemy_bullet.png");
+		}
 	}
 	
 	public void act() {
 		move();
 	}
+	
 	
 }
