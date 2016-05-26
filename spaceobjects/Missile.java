@@ -14,10 +14,12 @@ public class Missile extends SpaceObject
     public Missile(Location loc, GameField field)
     {
     	super(loc, INITXSPEED, 0, field, WIDTH, HEIGHT);
+    	xSpeed = INITXSPEED;
     }
     
     public void act()
     {
+        xSpeed += ACCELERATON;
         setXVel(xSpeed + ACCELERATION);
         move;
     }
