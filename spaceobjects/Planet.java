@@ -1,6 +1,6 @@
 //this class is purely an idea. we can implement it if we have extra time. 
 //planet slowly moves across screen makes it look more like your moving.
-//planet could kill the player mayve even enemy ships too or it could be only aesthetic
+//planet could kill the player maybe even enemy ships too or it could be only aesthetic
 package spaceobjects;
 
 import field.GameField;
