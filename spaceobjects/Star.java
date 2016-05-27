@@ -13,7 +13,8 @@ public class Star extends SpaceObject
     
     public Star(Location loc, GameField field)
     {
-        int starColor = Math.random() * 7;//Start of color selector code
+    	super(loc, 0, 0, field, WIDTH, HEIGHT);
+        int starColor = (int)(Math.random() * 7);//Start of color selector code
         if (starColor <= 3)
             setImg("WhiteStar.png");
         else if (starColor == 4)
@@ -23,16 +24,14 @@ public class Star extends SpaceObject
         else if (starColor == 6)
             setImg("RedStar.png");//End of color selector code
         
-        int velocity;  
-        int speedID = Math.random() * 3;
+        int speedID = (int) (Math.random() * 3);
         if (speedID == 0)
-            velocity = SLOW;
+            setXVel(SLOW);
         else if (speedID == 1)
-            velocity = MEDIUM;
+            setXVel(MEDIUM);
         else if (speedID == 2)
-            velocity = FAST;
+            setXVel(FAST);
         
-    	super(loc, velocity, 0, field, WIDTH, HEIGHT);
     }
     
     public void act() {
