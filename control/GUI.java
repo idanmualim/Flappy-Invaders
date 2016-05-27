@@ -47,6 +47,13 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 	}
 
 	public void paint(Graphics g) {
+		Image offImage = createImage(600, 600);
+		Graphics buffer = offImage.getGraphics();
+		paintOffScreen(buffer);
+		g.drawImage(offImage, 0, 0, null);
+	}
+	
+	public void paintOffScreen(Graphics g) {
 		super.paint(g);
 		if(control.isInPlay()) {
 			ArrayList<SpaceObject> spaceObjects = control.getObjectList();
