@@ -12,6 +12,7 @@ import spaceobjects.ShipType1;
 import spaceobjects.ShipType2;
 import spaceobjects.ShipType3;
 import spaceobjects.SpaceObject;
+import spaceobjects.Star;
 
 public class GameField {
 
@@ -32,7 +33,7 @@ public class GameField {
 	private static final int SPAWNRATE = 60; //Respawns new enemy every x ticks, can be modified to increase over time
 	private static final int DESPAWNX = -60;
 	
-	private static final int STARSPAWNRATE = 80;
+	private static final int STARSPAWNRATE = 5;
 	
 	public GameField(Controller controller) {
 		control = controller;
@@ -55,7 +56,7 @@ public class GameField {
 		removeOutOfBounds();
 		if (time % SPAWNRATE == 0)
 			spawnRandom();
-		if (time % STARSSPAWNRATE == 0)
+		if (time % STARSPAWNRATE == 0)
 			spawnStar();
 		score++;
 		time++;
@@ -130,7 +131,7 @@ public class GameField {
 		}
 		for (int x = 0; x < stars.size(); x++)
 		{
-			if (stars.get(x).getLocation().getX() > FIELDWIDTH)
+			if (stars.get(x).getLocation().getX() < DESPAWNX)
 				stars.remove(x);
 		}
 		if (player.getLocation().getY() > FIELDHEIGHT) {
@@ -161,6 +162,10 @@ public class GameField {
 	
 	public ArrayList<Bullet> getPlayerBullets() {
 		return playerBullets;
+	}
+	
+	public ArrayList<Star> getStars() {
+		return stars;
 	}
 	
 	public Player getPlayer() {
