@@ -55,6 +55,8 @@ public class GameField {
 		removeOutOfBounds();
 		if (time % SPAWNRATE == 0)
 			spawnRandom();
+		if (time % STARSSPAWNRATE == 0)
+			spawnStar();
 		score++;
 		time++;
 		control.updateGUI();
