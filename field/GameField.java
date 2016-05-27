@@ -29,7 +29,7 @@ public class GameField {
 	private static final int ENEMYSPAWNYRANGE = 472; //Enemies can spawn in an area of 472 pixels between
 														//the top and bottom of the field
 	private static final int SPAWNRATE = 60; //Respawns new enemy every x ticks, can be modified to increase over time
-	private static final int DESPAWNX = -60; //The x-coordinate at which enemy ships despawn (This will insure that sprites leave the screen before despawning)
+	private static final int DESPAWNX = -60;
 	
 	public GameField(Controller controller) {
 		control = controller;
@@ -50,7 +50,7 @@ public class GameField {
 		if (time % SPAWNRATE == 0)
 			spawnRandom();
 		score++;
-		time ++;
+		time++;
 		control.updateGUI();
 	}
 	
@@ -166,7 +166,7 @@ public class GameField {
 				break;
 			case 3: spawnEnemy("Ship2");
 				break;
-			case 4: spawnEnemy("ship3");
+			case 4: spawnEnemy("Ship3");
 				break;
 		}
 	}
