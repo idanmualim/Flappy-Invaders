@@ -3,17 +3,34 @@ package spaceobjects;
 import field.GameField;
 import field.Location;
 
-public class star extends SpaceObject
+public class Star extends SpaceObject
 {
-    private final static int WIDTH = 54;//Place width (horizontal size) of asteroid here.
-    private final static int HEIGHT = 52;//Place height (vertical size) of asteroid here.
-    private final static int MINXVEL = 5; //Place maximum x velocity here
-    private final static int MINYVEL = -2; //Place maximum y velocity here
+    private final static int WIDTH = 3;//Place width (horizontal size) of asteroid here.
+    private final static int HEIGHT = 3;//Place height (vertical size) of asteroid here.
+    private final static int SLOW = -1;//Gives the appearance of being farthest stars.
+    private final static int MEDIUM = -3;
+    private final static int FAST = -5;//Gives the appearance of being closest stars.
     
-    public Asteroid(Location loc, GameField field)
+    public Star(Location loc, GameField field)
     {
-    	super(loc, (int)-(MINXVEL + Math.random() * 5), (int)(MINYVEL + Math.random() * 5), field, WIDTH, HEIGHT);
-    	setImg("asteroid.png");
+        int starColor = Math.random() * 6;//Start of color selector code
+        if (starColor <= 3)
+            setImg("WhiteStar.png");
+        else if (starColor == 4)
+            setImg("BlueStar.png");
+        else if (starColor == 5)
+            setImg("YellowStar.png");//End of color selector code
+        
+        int velocity;  
+        int speedID = Math.random() * 3;
+        if (speedID == 0)
+            velocity = SLOW;
+        else if (speedID == 1)
+            velocity = MEDIUM;
+        else if (speedID == 2)
+            velocity = FAST;
+        
+    	super(loc, velocity, 0, field, WIDTH, HEIGHT);
     }
     
     public void act() {
