@@ -18,6 +18,7 @@ import javax.swing.Timer;
 
 import spaceobjects.Bullet;
 import spaceobjects.SpaceObject;
+import spaceobjects.Star;
 
 public class GUI extends JFrame implements ActionListener, KeyListener
 {
@@ -50,11 +51,15 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 		if(control.isInPlay()) {
 			ArrayList<SpaceObject> spaceObjects = control.getObjectList();
 			ArrayList<Bullet> bullets = control.getBulletList();
+			ArrayList<Star> stars = control.getStarList();
 			
+			for(Star s : stars)
+				g.drawImage(s.getImg(), s.getLocation().getX(), s.getLocation().getY(), this);
 			for(SpaceObject o : spaceObjects)
 				g.drawImage(o.getImg(), o.getLocation().getX(), o.getLocation().getY(), this);
 			for(Bullet b : bullets)
 				g.drawImage(b.getImg(), b.getLocation().getX(), b.getLocation().getY(), this);
+			
 		}
 	}
 	
