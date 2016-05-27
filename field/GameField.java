@@ -17,6 +17,7 @@ public class GameField {
 
 	private ArrayList<SpaceObject> objects;
 	private ArrayList<Bullet> playerBullets;
+	private ArrayList<Star> stars;
 	private Player player;
 	private int score;
 	private int shipsDestroyed;
@@ -31,15 +32,20 @@ public class GameField {
 	private static final int SPAWNRATE = 60; //Respawns new enemy every x ticks, can be modified to increase over time
 	private static final int DESPAWNX = -60;
 	
+	private static final int STARSPAWNRATE = 80;
+	
 	public GameField(Controller controller) {
 		control = controller;
 		objects = new ArrayList<SpaceObject>();
 		playerBullets = new ArrayList<Bullet>();
+		stars = new ArrayList<Star>();
 		player = new Player(new Location(40, 300), 0, 0, this);
 		addToField(player);
 	}
 	
 	public void step() {
+		for (int x = 0; x < stars.size(); x++)
+			stars.get(x).act();
 		for (int i = 0; i < objects.size(); i++) //Moves all enemy SpaceObjects
 			objects.get(i).act();
 		for (int b = 0; b < playerBullets.size(); b++)//Moves all player bullets
@@ -120,6 +126,11 @@ public class GameField {
 			if (playerBullets.get(i).getLocation().getX() > FIELDWIDTH)
 				playerBullets.remove(i);
 		}
+		for (int x = 0; x < stars.size(); x++)
+		{
+			if (stars.get(x).getLocation().getX() > FIELDWIDTH)
+				stars.remove(x);
+		}
 		if (player.getLocation().getY() > FIELDHEIGHT) {
 			remove(player);
 			control.onGameOver();
@@ -198,6 +209,13 @@ public class GameField {
 			break;
 		}
 		
+	}
+	
+	
+	public void spawnStar() {
+		Location spawnLoc = new Location(ENEMYSPAWNXCOOR, (int)(Math.random() * FIELDHEIGHT));
+		Star star = new Star(spawnLoc, this);
+		stars.add(star);
 	}
 	
 }
