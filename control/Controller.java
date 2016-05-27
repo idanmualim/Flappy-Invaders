@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import field.GameField;
 import spaceobjects.Bullet;
 import spaceobjects.SpaceObject;
+import spaceobjects.Star;
 
 public class Controller {
     
@@ -57,6 +58,10 @@ public class Controller {
     	return field.getPlayerBullets();
     }
     
+    public ArrayList<Star> getStarList() {
+    	return field.getStars();
+    }
+    
     public void onPressUp() {
     	field.getPlayer().bounce();
     }
@@ -67,5 +72,9 @@ public class Controller {
     
     public boolean isInPlay() {
     	return inPlay;
+    }
+    
+    public GameField getF() {
+    	return field;
     }
 }
