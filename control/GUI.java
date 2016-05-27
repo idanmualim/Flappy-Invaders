@@ -13,7 +13,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.Timer;
 
@@ -25,6 +24,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 
 	private Controller control;
 	private boolean upJustPressed;
+	private int time;
 
 	public GUI(Controller controller) {
 		super("Flappy Invaders");
@@ -37,7 +37,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 		getContentPane().setBackground(Color.BLACK);
 		
 		addKeyListener(this);
-		
+
 		displayMenu();
 		setVisible(true);
 		
@@ -51,12 +51,10 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 			ArrayList<SpaceObject> spaceObjects = control.getObjectList();
 			ArrayList<Bullet> bullets = control.getBulletList();
 			
-			for(SpaceObject o : spaceObjects) {
+			for(SpaceObject o : spaceObjects)
 				g.drawImage(o.getImg(), o.getLocation().getX(), o.getLocation().getY(), this);
-			}
-			for(Bullet b : bullets) {
+			for(Bullet b : bullets)
 				g.drawImage(b.getImg(), b.getLocation().getX(), b.getLocation().getY(), this);
-			}
 		}
 	}
 	
@@ -84,9 +82,8 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(control.isInPlay()) {
+		if(control.isInPlay())
 			control.step();
-		}
 	}
 	
 	public void displayMenu() {
@@ -178,7 +175,6 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 				
 			}
 		});
-
 	}
 	
 	public void displayGameOver(int score, int killed, int accuracy, double time) {
@@ -210,44 +206,44 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 		frame.getContentPane().add(lblGameOver);
 		lblGameOver.setVisible(false);
 		
-		JTextField txtScore = new JTextField();
+		JLabel txtScore = new JLabel();
 		txtScore.setForeground(Color.WHITE);
 		txtScore.setFont(new Font("Impact", Font.PLAIN, 25));
 		txtScore.setBackground(Color.BLACK);
 		txtScore.setText("Score: " + score);
 		txtScore.setBounds(95, 207, 187, 31);
 		frame.getContentPane().add(txtScore);
-		txtScore.setColumns(10);
+		//txtScore.setColumns(10);
 		txtScore.setVisible(false);
 
-		JTextField txtEnemyKills= new JTextField();
+		JLabel txtEnemyKills= new JLabel();
 		txtEnemyKills.setText("Enemies Killed: " + killed); //use stats method
 		txtEnemyKills.setForeground(Color.WHITE);
 		txtEnemyKills.setFont(new Font("Impact", Font.PLAIN, 25));
-		txtEnemyKills.setColumns(10);
+		//txtEnemyKills.setColumns(10);
 		txtEnemyKills.setBackground(Color.BLACK);
 		txtEnemyKills.setBounds(95, 237, 187, 31);
 		frame.getContentPane().add(txtEnemyKills);
 		txtEnemyKills.setVisible(false);
 
-		JTextField txtAcc= new JTextField();
+		JLabel txtAcc= new JLabel();
 		txtAcc.setText("Accuracy: " + accuracy + "%"); //use stats method
 		txtAcc.setForeground(Color.WHITE);
 		txtAcc.setFont(new Font("Impact", Font.PLAIN, 25));
-		txtAcc.setColumns(10);
+		//txtAcc.setColumns(10);
 		txtAcc.setBackground(Color.BLACK);
 		txtAcc.setBounds(95, 267, 187, 31);
 		frame.getContentPane().add(txtAcc);
 		txtAcc.setVisible(false);
 
 
-		JTextField txtTime= new JTextField();
-		txtTime.setText(time + " seconds"); //use stats method
+		JLabel txtTime= new JLabel();
+		txtTime.setText("Time: " + time + " seconds"); //use stats method
 		txtTime.setForeground(Color.WHITE);
 		txtTime.setFont(new Font("Impact", Font.PLAIN, 25));
-		txtTime.setColumns(10);
+		//txtTime.setColumns(10);
 		txtTime.setBackground(Color.BLACK);
-		txtTime.setBounds(95, 297, 187, 31);
+		txtTime.setBounds(95, 297, 250, 31);
 		frame.getContentPane().add(txtTime);
 		txtTime.setVisible(false);
 		
