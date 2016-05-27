@@ -13,13 +13,15 @@ public class Star extends SpaceObject
     
     public Star(Location loc, GameField field)
     {
-        int starColor = Math.random() * 6;//Start of color selector code
+        int starColor = Math.random() * 7;//Start of color selector code
         if (starColor <= 3)
             setImg("WhiteStar.png");
         else if (starColor == 4)
             setImg("BlueStar.png");
         else if (starColor == 5)
-            setImg("YellowStar.png");//End of color selector code
+            setImg("YellowStar.png");
+        else if (starColor == 6)
+            setImg("RedStar.png");//End of color selector code
         
         int velocity;  
         int speedID = Math.random() * 3;
