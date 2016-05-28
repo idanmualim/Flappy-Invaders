@@ -23,6 +23,9 @@ public class ShipType2 extends SpaceObject
 	}
 	else
 		timer--;
+	
+	if(getLocation().getY() >= 536 || getLocation().getY() <= 64)
+		setYVel(-getYVel());
         move();
         
     }
