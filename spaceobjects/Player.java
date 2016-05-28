@@ -29,7 +29,7 @@ public class Player extends SpaceObject{
 
 	public void shoot() {
 		Location loc = getLocation();
-		Bullet b = new Bullet(new Location(loc.getX() + 62, loc.getY() + 44), true);
+		Bullet b = new Bullet(new Location(loc.getX() + 62, loc.getY() + 22), true);
 		getGameField().addBulletToField(b);
 		
 	}
