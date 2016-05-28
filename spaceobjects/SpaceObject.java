@@ -37,7 +37,6 @@ public class SpaceObject {
 		yVal += ySpeed;
 		location.setLocation((int)xVal, (int)yVal);
 		hitbox.changeLocation((int)xVal, (int)yVal);
-		changeVelocity();
 		
 	}
 	
