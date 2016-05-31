@@ -1,41 +1,55 @@
 package spaceobjects;
 
+import java.awt.Color;
+
 import field.GameField;
 import field.Location;
 
-public class Star extends SpaceObject
+public class Star
 {
-	private final static int WIDTH = 3;//Place width (horizontal size) of asteroid here.
-	private final static int HEIGHT = 3;//Place height (vertical size) of asteroid here.
 	private final static int SLOW = -1;//Gives the appearance of being farthest stars.
 	private final static int MEDIUM = -3;
 	private final static int FAST = -5;//Gives the appearance of being closest stars.
+	
+	double velocity;
+	Location location;
+	
+	private Color type;
 
 	public Star(Location loc, GameField field)
 	{
-		super(loc, 0, 0, field, WIDTH, HEIGHT);
 		int starColor = (int)(Math.random() * 7);//Start of color selector code
 		if (starColor <= 3)
-			setImg("WhiteStar.png");
+			type = Color.WHITE;
 		else if (starColor == 4)
-			setImg("BlueStar.png");
+			type = Color.BLUE;
 		else if (starColor == 5)
-			setImg("YellowStar.png");
+			type = Color.YELLOW;
 		else if (starColor == 6)
-			setImg("RedStar.png");//End of color selector code
+			type = Color.RED;
 
 		int speedID = (int) (Math.random() * 3);
 		if (speedID == 0)
-			setXVel(SLOW);
+			velocity = SLOW;
 		else if (speedID == 1)
-			setXVel(MEDIUM);
+			velocity = MEDIUM;
 		else if (speedID == 2)
-			setXVel(FAST);
+			velocity = FAST;
+		
+		location = loc;
 
 	}
 
 	public void act() {
-		move();
+		location.setLocation((int)(location.getX() + velocity), location.getY());
+	}
+	
+	public Location getLocation() {
+		return location;
+	}
+	
+	public Color getColor() {
+		return type;
 	}
 
 }
