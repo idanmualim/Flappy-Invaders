@@ -54,6 +54,8 @@ public class GameField {
 			objects.get(i).act();
 		for (int b = 0; b < playerBullets.size(); b++)//Moves all player bullets
 			playerBullets.get(b).act();
+		for (int e = 0; e < explosions.size(); e++)
+			explosions.get(e).act();
 		player.act();
 		checkHit();
 		removeOutOfBounds();
