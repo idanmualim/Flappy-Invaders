@@ -62,6 +62,10 @@ public class Controller {
     	return field.getStars();
     }
     
+    public ArrayList<Explosion> getExplosionList() {
+        return field.getExplosions();
+    }
+    
     public void onPressUp() {
     	field.getPlayer().bounce();
     }
