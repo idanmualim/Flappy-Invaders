@@ -19,6 +19,7 @@ public class GameField {
 	private ArrayList<SpaceObject> objects;
 	private ArrayList<Bullet> playerBullets;
 	private ArrayList<Star> stars;
+	private ArrayList<Explosion> explosions;
 	private Player player;
 	private int score;
 	private int shipsDestroyed;
@@ -40,6 +41,7 @@ public class GameField {
 		objects = new ArrayList<SpaceObject>();
 		playerBullets = new ArrayList<Bullet>();
 		stars = new ArrayList<Star>();
+		explosions = new ArrayList<Explosion>();
 		player = new Player(new Location(40, 300), 0, 0, this);
 		addToField(player);
 	}
@@ -55,6 +57,7 @@ public class GameField {
 		player.act();
 		checkHit();
 		removeOutOfBounds();
+		removeFinishedExplosions();
 		if (time % SPAWNRATE == 0)
 			spawnRandom();
 		if (time % STARSPAWNRATE == 0)
@@ -74,12 +77,18 @@ public class GameField {
 				{
 					playerBullets.remove(i);
 					i--;
-					if (!(objects.get(z) instanceof Asteroid))//Destroyed SpaceObject if it's not an asteroid
+					if (!(objects.get(z) instanceof Asteroid || objects.get(z) instanceof Bullet))//Destroyed SpaceObject if it's not an asteroid
 					{
+						Explosion explosion = new Explosion(objects.get(z).getLocation(), this);
+						addExplosion(explosion);
 						objects.remove(z);
 						z--;
 						score += 50;
 						shipsDestroyed++;
+					} else if (objects.get(z) instanceof Bullet) {
+						objects.remove(z);
+						z--;
+						score += 10;
 					}
 				}
 			}
@@ -98,6 +107,18 @@ public class GameField {
 	public void addBulletToField(Bullet toAdd) {
 		playerBullets.add(toAdd);
 		shotsFired++;
+	}
+	
+	public void addExplosion(Explosion explosion) {
+		explosions.add(explosion);
+	}
+	
+	public void removeFinishedExplosions() {
+		Iterator<Explosion> iter = explosions.iterator();
+		while (iter.hasNext()) {
+			if (iter.next().checkDone())
+				iter.remove();
+		}
 	}
 	
 	public void remove(SpaceObject toRemove) {
@@ -167,6 +188,10 @@ public class GameField {
 	
 	public ArrayList<Star> getStars() {
 		return stars;
+	}
+	
+	public ArrayList<Explosion> getExplosions() {
+		return explosions;
 	}
 	
 	public Player getPlayer() {
