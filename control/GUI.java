@@ -36,6 +36,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 		getContentPane().setBackground(Color.BLACK);
+		setResizable(false);
 		
 		addKeyListener(this);
 
@@ -60,8 +61,10 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 			ArrayList<Bullet> bullets = control.getBulletList();
 			ArrayList<Star> stars = control.getStarList();
 			
-			for(Star s : stars)
-				g.drawImage(s.getImg(), s.getLocation().getX(), s.getLocation().getY(), this);
+			for(Star s : stars) {
+				g.setColor(s.getColor());
+				g.drawRect(s.getLocation().getX(), s.getLocation().getY(), 1, 1);
+			}
 			for(SpaceObject o : spaceObjects)
 				g.drawImage(o.getImg(), o.getLocation().getX(), o.getLocation().getY(), this);
 			for(Bullet b : bullets)
