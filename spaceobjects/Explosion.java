@@ -33,7 +33,7 @@ public class Explosion
 			if (iter.hasNext())
 				setImg(iter.next());
 			else
-				done = false;
+				done = true;
 		}
 		timer++;
 		
