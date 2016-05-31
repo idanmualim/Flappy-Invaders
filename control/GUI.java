@@ -60,6 +60,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 			ArrayList<SpaceObject> spaceObjects = control.getObjectList();
 			ArrayList<Bullet> bullets = control.getBulletList();
 			ArrayList<Star> stars = control.getStarList();
+			ArrayList<Explosion> explosions = control.getExplosionList();
 			
 			for(Star s : stars) {
 				g.setColor(s.getColor());
@@ -69,6 +70,8 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 				g.drawImage(o.getImg(), o.getLocation().getX(), o.getLocation().getY(), this);
 			for(Bullet b : bullets)
 				g.drawImage(b.getImg(), b.getLocation().getX(), b.getLocation().getY(), this);
+			for(Explosion e : explosions)
+				g.drawImage(e.getImg(), e.getLocation().getX(), e.getLocation().getY(), this);
 			
 		}
 	}
