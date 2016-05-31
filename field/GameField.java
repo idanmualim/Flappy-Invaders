@@ -45,8 +45,9 @@ public class GameField {
 	}
 	
 	public void step() {
-		for (int x = 0; x < stars.size(); x++)
+		for (int x = 0; x < stars.size(); x++) {
 			stars.get(x).act();
+		}
 		for (int i = 0; i < objects.size(); i++) //Moves all enemy SpaceObjects
 			objects.get(i).act();
 		for (int b = 0; b < playerBullets.size(); b++)//Moves all player bullets
