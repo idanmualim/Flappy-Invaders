@@ -7,46 +7,53 @@ import field.Location;
 
 public class Explosion
 {
-	
-	double velocity;
-	Location location;
-	
-	private Color type;
+	private Image img;
+	private int timer;
+	private boolean done;
+	private ArrayList<String> frameNames;
+	private final static int EXPLOSIONTIME = 5;// The duration of each explosion frame.
+	private Iterator iter;
 
-	public Star(Location loc, GameField field)
+	public Explosion(Location loc, GameField field)
 	{
-		int starColor = (int)(Math.random() * 7);//Start of color selector code
-		if (starColor <= 3)
-			type = Color.WHITE;
-		else if (starColor == 4)
-			type = Color.BLUE;
-		else if (starColor == 5)
-			type = Color.YELLOW;
-		else if (starColor == 6)
-			type = Color.RED;
-
-		int speedID = (int) (Math.random() * 3);
-		if (speedID == 0)
-			velocity = SLOW;
-		else if (speedID == 1)
-			velocity = MEDIUM;
-		else if (speedID == 2)
-			velocity = FAST;
-		
-		location = loc;
-
+		done = false;
+		timer = 0; frame = 0;
+		frameNames = new ArrayList<String>();
+		frameNames.add("frame1.png");
+		frameNames.add("frame2.png");
+		frameNames.add("frame3.png");
+		frameNames.add("frame4.png");
+		frameNames.add("frame5.png");
+		iter = frameNames.iterator();
 	}
 
 	public void act() {
-		location.setLocation((int)(location.getX() + velocity), location.getY());
+		if (timer % EXPLOSIONTIME = 0)
+		{
+			if (iter.hasNext())
+				setImg(iter.next());
+			else
+				done = false;
+		}
+		timer++;
+		
+			
 	}
 	
 	public Location getLocation() {
 		return location;
 	}
 	
-	public Color getColor() {
-		return type;
+	public void setImg(String path) {
+		img = new ImageIcon(getClass().getClassLoader().getResource(path)).getImage();
+	}
+	
+	public Image getImg() {
+		return img;
+	}
+	
+	public boolean checkDone() {
+		return done;	
 	}
 
 }
