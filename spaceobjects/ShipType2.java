@@ -6,6 +6,7 @@ import field.Location;
 public class ShipType2 extends SpaceObject
 {
 	int timer;
+	private final static int SCORE = 50;
 
 	public ShipType2(Location loc, GameField field) {
 		super(loc, -10, 0, field, 54, 60);
@@ -23,5 +24,9 @@ public class ShipType2 extends SpaceObject
 
 	public void changeVelocity() {
 		setYVel(-Math.cos(timer * Math.PI / 20) * 10);
+	}
+	
+	public int getScore() {
+		return SCORE;
 	}
 }
