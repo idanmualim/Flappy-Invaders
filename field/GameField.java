@@ -45,7 +45,7 @@ public class GameField {
 		playerBullets = new ArrayList<Bullet>();
 		stars = new ArrayList<Star>();
 		explosions = new ArrayList<Explosion>();
-		player = new Player(new Location(40, 300), 0, 0, this);
+		player = new Player(new Location(-80, 300), 0, 0, this);
 		addToField(player);
 		spawnRate = INITIALSPAWNRATE;
 	}
