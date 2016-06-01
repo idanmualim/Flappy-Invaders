@@ -78,7 +78,7 @@ public class Controller {
     	return inPlay;
     }
     
-    public GameField getF() {
+    public GameField getField() {
     	return field;
     }
 }
