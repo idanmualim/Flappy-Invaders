@@ -31,7 +31,8 @@ public class GameField {
 	private static final int ENEMYSPAWNXCOOR = 680;//This is the x-coordinate that the enemies spawn at. (offscreen)
 	private static final int ENEMYSPAWNYRANGE = 472; //Enemies can spawn in an area of 472 pixels between
 														//the top and bottom of the field
-	private static final int SPAWNRATE = 60; //Respawns new enemy every x ticks, can be modified to increase over time
+	private static final int INITIALSPAWNRATE = 60; //Respawns new enemy every x ticks, can be modified to increase over time
+	private int spawnRate;
 	private static final int DESPAWNX = -60;
 	
 	private static final int STARSPAWNRATE = 5;
@@ -44,6 +45,7 @@ public class GameField {
 		explosions = new ArrayList<Explosion>();
 		player = new Player(new Location(40, 300), 0, 0, this);
 		addToField(player);
+		spawnRate = INITIALSPANRATE;
 	}
 	
 	public void step() {
@@ -60,14 +62,20 @@ public class GameField {
 		checkHit();
 		removeOutOfBounds();
 		removeFinishedExplosions();
-		if (time % SPAWNRATE == 0)
+		if (time % spawnRate == 0)
 			spawnRandom();
 		if (time % STARSPAWNRATE == 0)
 			spawnStar();
 		score++;
 		time++;
+		increaseSpawnRate();
 		control.updateGUI();
 	}
+	
+	public void increaseSpawnRate() {
+		if (spawnRate > 20 && (timer % 150))
+			spawnRate--;
+ 	}
 	
 	public void checkHit() {
 		for (int z = 0; z < objects.size(); z++)
