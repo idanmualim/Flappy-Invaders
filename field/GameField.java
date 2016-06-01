@@ -45,7 +45,7 @@ public class GameField {
 		explosions = new ArrayList<Explosion>();
 		player = new Player(new Location(40, 300), 0, 0, this);
 		addToField(player);
-		spawnRate = INITIALSPANRATE;
+		spawnRate = INITIALSPAWNRATE;
 	}
 	
 	public void step() {
@@ -73,7 +73,7 @@ public class GameField {
 	}
 	
 	public void increaseSpawnRate() {
-		if (spawnRate > 20 && (timer % 150))
+		if (spawnRate > 20 && (time % 150 == 0))
 			spawnRate--;
  	}
 	
