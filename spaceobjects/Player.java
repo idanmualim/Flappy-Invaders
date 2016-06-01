@@ -10,15 +10,20 @@ public class Player extends SpaceObject{
 	private static final int CEILING = 44;
 
 	public Player(Location loc, int xVel, int yVel, GameField field) {
-		super(loc, xVel, yVel, field, 64, 44);
+		super(loc, 15, yVel, field, 64, 44);
 		setImg("player.png");
+		enteredScreen = false;
 	}
 	
 	public void act() {
+		if (getXVel() > 0)
+			setXVel(getXVel() - 0.7))
+		else {
 		setYVel(getYVel() + 0.2);
 		if (getLocation().getY() <= CEILING) {
 			setLocation(new Location(getLocation().getX(), getHitBox().getHeight() + 1));
 			setYVel(1);
+		}
 		}
 		move();
 	}
