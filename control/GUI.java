@@ -13,7 +13,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextPane;
 import javax.swing.Timer;
 
 import spaceobjects.Bullet;
@@ -86,7 +85,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 			control.onPressUp();
 			upJustPressed = true;
 		}
-		else if(e.getKeyCode() == KeyEvent.VK_SPACE)
+		else if(e.getKeyCode() == KeyEvent.VK_SPACE  && control.getField().getTime() > 15)
 			control.onPressSpace();
 	}
 
