@@ -5,19 +5,19 @@ import field.Location;
 
 public class Player extends SpaceObject{
 	
-	private static final int INITIAL_VELOCITY = -8;
-	private static final int CEILING = 64;
-	double trueYVel;
+	//0.3 and -8
+	private static final int INITIAL_VELOCITY = -7;
+	private static final int CEILING = 44;
 
 	public Player(Location loc, int xVel, int yVel, GameField field) {
-		super(loc, xVel, yVel, field, 62, 44);
+		super(loc, xVel, yVel, field, 64, 44);
 		setImg("player.png");
 	}
 	
 	public void act() {
-		setYVel(getYVel() + 0.3);
+		setYVel(getYVel() + 0.2);
 		if (getLocation().getY() <= CEILING) {
-			setLocation(new Location(getLocation().getX(), 65));
+			setLocation(new Location(getLocation().getX(), getHitBox().getHeight() + 1));
 			setYVel(1);
 		}
 		move();
@@ -29,7 +29,7 @@ public class Player extends SpaceObject{
 
 	public void shoot() {
 		Location loc = getLocation();
-		Bullet b = new Bullet(new Location(loc.getX() + 62, loc.getY() + 22), true);
+		Bullet b = new Bullet(new Location(loc.getX() + 64, loc.getY() + 22), true);
 		getGameField().addBulletToField(b);
 		
 	}
