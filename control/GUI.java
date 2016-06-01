@@ -149,8 +149,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 		
 
 
-		JTextPane txtHowTo1 = new JTextPane();
-		txtHowTo1.setText("Press UP to jump.\nPress SPACE to fire.\nTry not to die.");
+		JLabel txtHowTo1 = new JLabel("Press UP to jump.\nPress SPACE to fire. \nyou cannot destroy Astriods. \nshoot everything else \nTry not to die.");
 		txtHowTo1.setFont(new Font("Arial", Font.PLAIN, 25));
 		txtHowTo1.setBounds(95, 173, 406, 239);
 		txtHowTo1.setBackground(new Color(255, 215, 0));
