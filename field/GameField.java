@@ -33,6 +33,7 @@ public class GameField {
 														//the top and bottom of the field
 	private static final int INITIALSPAWNRATE = 60; //Respawns new enemy every x ticks, can be modified to increase over time
 	private int spawnRate;
+	private static final int ASTEROIDTIMER = 60;
 	private static final int DESPAWNX = -60;
 	
 	private static final int STARSPAWNRATE = 5;
@@ -66,6 +67,8 @@ public class GameField {
 			spawnRandom();
 		if (time % STARSPAWNRATE == 0)
 			spawnStar();
+		if (time % ASTEROIDTIMER == 0)
+			spawnEnemy("Asteroid");
 		score++;
 		time++;
 		increaseSpawnRate();
@@ -212,7 +215,7 @@ public class GameField {
 	{
 		int id = (int)(Math.random() * 5);
 		switch (id) {
-			case 0: spawnEnemy("Asteroid");
+			case 0: spawnEnemy("Missile");
 				break;
 			case 1: spawnEnemy("Missile");
 				break;
