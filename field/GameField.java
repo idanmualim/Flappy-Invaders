@@ -6,6 +6,7 @@ import java.util.Iterator;
 import control.Controller;
 import spaceobjects.Asteroid;
 import spaceobjects.Bullet;
+import spaceobjects.Explosion;
 import spaceobjects.Missile;
 import spaceobjects.Player;
 import spaceobjects.ShipType1;
