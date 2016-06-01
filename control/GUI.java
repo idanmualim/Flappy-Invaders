@@ -74,6 +74,9 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 			for(Explosion e : explosions)
 				g.drawImage(e.getImg(), e.getLocation().getX(), e.getLocation().getY(), this);
 			
+			g.setColor(Color.WHITE);
+			g.setFont(new Font("Impact", Font.PLAIN, 25));
+			g.drawString(control.getField().getScore() + "", 20, 580);
 		}
 	}
 	
