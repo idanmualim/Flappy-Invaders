@@ -304,18 +304,6 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 			}
 		});
 	}
-	public void Score(int score) {
-		JFrame frame = this;
-
-		JLabel txtSscreen= new JLabel();
-		txtSscreen.setText(score); //use stats method
-		txtSscreen.setForeground(Color.WHITE);
-		txtSscreen.setFont(new Font("Impact", Font.PLAIN, 25));
-		txtSscreen.setBackground(Color.BLACK);
-		txtSscreen.setBounds(20, 20, 187, 31);
-		frame.getContentPane().add(txtSscreen);
-		
-	}
 
 
 }
