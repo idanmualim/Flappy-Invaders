@@ -17,6 +17,7 @@ import javax.swing.JTextPane;
 import javax.swing.Timer;
 
 import spaceobjects.Bullet;
+import spaceobjects.Explosion;
 import spaceobjects.SpaceObject;
 import spaceobjects.Star;
 
