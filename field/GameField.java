@@ -95,9 +95,9 @@ public class GameField {
 					{
 						Explosion explosion = new Explosion(objects.get(z).getLocation(), this);
 						addExplosion(explosion);
+						score += objects.get(z).getScore();
 						objects.remove(z);
 						z--;
-						score += 50;
 						shipsDestroyed++;
 					} else if (objects.get(z) instanceof Bullet) {
 						objects.remove(z);
