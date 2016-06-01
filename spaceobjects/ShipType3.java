@@ -11,6 +11,7 @@ public class ShipType3 extends SpaceObject
     private final static int MAXIMUM_HEIGHT = 536;//Insert the height of the gamefield here.
     private final static int MINIMUM_HEIGHT = 64;
     private final static int FIRERATE = 60;
+    private final static int SCORE = 75;
     private int timer;
 
     public ShipType3(Location loc, GameField field)
@@ -44,5 +45,9 @@ public class ShipType3 extends SpaceObject
             setYVel(-verticalVelocity);
         else if (getLocation().getY() <= MINIMUM_HEIGHT)
             setYVel(verticalVelocity);
+    }
+    
+    public int getScore() {
+    	return SCORE;
     }
 }
