@@ -8,11 +8,9 @@ import field.Location;
 
 public class Planet extends SpaceObject {
 
-  private final static int DEFAULT_SPEED = 1;
-  private final static int MOVE_RATE = 1;
-  private final static int WIDTH = 100;   //width of planet. planets should be the biggest thing on the screen
-  private final static int HEIGHT = 100;  //length of planet
-  private int timer;
+  private final static int VELOCITY = -1;
+  Location location;
+
 
   public Planet(Location loc, GameField field) {
     super(loc, DEFAULT_SPEED, 0, field, WIDTH, HEIGHT);
@@ -20,13 +18,12 @@ public class Planet extends SpaceObject {
     timer = MOVE_RATE;
   }
   
-  public void act() {
-    if(timer <= 0)
-      {
-        move();
-        timer = MOVE_RATE
-      }
-    else
-      timer--;
-  }
+  
+	public void act() {
+		location.setLocation((int)(location.getX() + VELOCITY), location.getY());
+	}
+	
+	public Location getLocation() {
+	  return location;
+	}
 }
