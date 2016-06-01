@@ -108,4 +108,8 @@ public class SpaceObject {
 		return img;
 	}
 	
+	public int getScore() {
+		return 50;
+	}
+	
 }
