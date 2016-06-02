@@ -150,7 +150,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 
 		JLabel txtHowTo1 = new JLabel("<html>Press UP to jump.<br>"
 				+ "Press SPACE to fire.<br>"
-				+ "You cannot destroy Astriods.<br>"
+				+ "You cannot destroy Asteriods.<br>"
 				+ "Shoot everything else.<br>"
 				+ "Try not to die.</html>");
 		txtHowTo1.setFont(new Font("Arial", Font.PLAIN, 25));
