@@ -25,6 +25,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 
 	private Controller control;
 	private boolean upJustPressed;
+	private boolean spaceJustPressed;
 	private int time;
 
 	public GUI(Controller controller) {
@@ -85,14 +86,18 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 			control.onPressUp();
 			upJustPressed = true;
 		}
-		else if(e.getKeyCode() == KeyEvent.VK_SPACE  && control.getField().getTime() > 15)
+		else if(e.getKeyCode() == KeyEvent.VK_SPACE  && control.getField().getTime() > 15 && !spaceJustPressed) {
 			control.onPressSpace();
+			spaceJustPressed = true;
+		}
 	}
 
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		if(arg0.getKeyCode() == KeyEvent.VK_UP)
 			upJustPressed = false;
+		else if(arg0.getKeyCode() == KeyEvent.VK_SPACE)
+			spaceJustPressed = false;
 	}
 
 	@Override
