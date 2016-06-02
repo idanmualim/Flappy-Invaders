@@ -1,4 +1,5 @@
 # Flappy-Invaders
+Final Build - June 2, 2016
 A game made by Robert Furth, Brandon Nguyen, Idan Mualim, and Connor Bue. 
 Artwork made by Robert Furth. Game code produced by Robert Furth and Brandon Nguyen. GUI produced by Idan Mualim. Bug testing done by Connor Bue.
 
