@@ -23,10 +23,13 @@ import spaceobjects.Star;
 public class GUI extends JFrame implements ActionListener, KeyListener
 {
 
+	/**
+	 * I don't know why we need this, but that warning was annoying.
+	 */
+	private static final long serialVersionUID = 1L;
 	private Controller control;
 	private boolean upJustPressed;
 	private boolean spaceJustPressed;
-	private int time;
 
 	public GUI(Controller controller) {
 		super("Flappy Invaders");
