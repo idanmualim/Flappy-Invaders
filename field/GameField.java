@@ -45,22 +45,21 @@ public class GameField {
 		playerBullets = new ArrayList<Bullet>();
 		stars = new ArrayList<Star>();
 		explosions = new ArrayList<Explosion>();
-		player = new Player(new Location(-80, 300), 15, 0, this);
+		player = new Player(new Location(-40, 300), 16, 0, this);
 		addToField(player);
 		spawnRate = INITIALSPAWNRATE;
 	}
 	
 	public void step() {
-		for (int x = 0; x < stars.size(); x++) {
+		for (int x = 0; x < stars.size(); x++)
 			stars.get(x).act();
-		}
 		for (int i = 0; i < objects.size(); i++) //Moves all enemy SpaceObjects
 			objects.get(i).act();
 		for (int b = 0; b < playerBullets.size(); b++)//Moves all player bullets
 			playerBullets.get(b).act();
 		for (int e = 0; e < explosions.size(); e++)
 			explosions.get(e).act();
-		player.act();
+		//player.act();
 		checkHit();
 		removeOutOfBounds();
 		removeFinishedExplosions();
