@@ -15,7 +15,7 @@ public class Explosion
 	private int timer;
 	private boolean done;
 	private ArrayList<String> frameNames;
-	private final static int EXPLOSIONTIME = 5;// The duration of each explosion frame.
+	private final static int EXPLOSIONTIME = 2;// The duration of each explosion frame.
 	private Iterator<String> iter;
 	private Location location;
 
@@ -24,11 +24,8 @@ public class Explosion
 		done = false;
 		timer = 0;
 		frameNames = new ArrayList<String>();
-		frameNames.add("explosion/frame1.png");
-		frameNames.add("explosion/frame2.png");
-		frameNames.add("explosion/frame3.png");
-		frameNames.add("explosion/frame4.png");
-		frameNames.add("explosion/frame5.png");
+		for(int i = 1; i <= 7; i++)
+			frameNames.add("explosion/frame" + i + ".png");
 		iter = frameNames.iterator();
 		location = loc;
 	}
