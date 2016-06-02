@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import field.GameField;
 import spaceobjects.Bullet;
+import spaceobjects.Explosion;
 import spaceobjects.SpaceObject;
 import spaceobjects.Star;
 
