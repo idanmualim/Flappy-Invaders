@@ -4,7 +4,6 @@ import field.Location;
 
 public class ShipType1 extends SpaceObject
 {
-	private final static int VELOCITY = 0; //ship stays in one place
 	private final static int FIRERATE = 60;
 	private final static int SCORE = 25;
 	private int timer;
