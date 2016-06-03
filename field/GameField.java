@@ -86,11 +86,11 @@ public class GameField {
 			for (int i = 0; i < playerBullets.size(); i++)//Checks for collisions between player fired bullets and enemy objects.
 			{
 				
-				if (playerBullets.get(i).getHitBox().checkCollision(objects.get(z).getHitBox()))
+				if (!(objects.get(z) instanceof Bullet) && playerBullets.get(i).getHitBox().checkCollision(objects.get(z).getHitBox()))
 				{
 					playerBullets.remove(i);
 					i--;
-					if (!(objects.get(z) instanceof Asteroid || objects.get(z) instanceof Bullet))//Destroyed SpaceObject if it's not an asteroid
+					if (!(objects.get(z) instanceof Asteroid))//Destroyed SpaceObject if it's not an asteroid
 					{
 						Explosion explosion = new Explosion(objects.get(z).getLocation(), this);
 						addExplosion(explosion);
@@ -98,14 +98,19 @@ public class GameField {
 						objects.remove(z);
 						z--;
 						shipsDestroyed++;
-					} 
+					}
 				}
 			}
 		}
 		for (int b = 0; b < objects.size(); b++)
 		{
 			if (player.getHitBox().checkCollision(objects.get(b).getHitBox()))
+			{
+				Explosion explosion = new Explosion(player.getLocation(),this);
+				addExplosion(explosion);
 				control.onGameOver();
+			}
+				
 		}
 	}
 	
