@@ -47,7 +47,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 		displayMenu();
 		setVisible(true);
 		
-		Timer timer = new Timer(17, this);
+		Timer timer = new Timer(20, this);
 		timer.start();
 	}
 
