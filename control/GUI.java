@@ -89,7 +89,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 			control.onPressUp();
 			upJustPressed = true;
 		}
-		else if(e.getKeyCode() == KeyEvent.VK_SPACE  && control.getField().getTime() > 15 && !spaceJustPressed) {
+		else if(e.getKeyCode() == KeyEvent.VK_Z  && control.getField().getTime() > 15 && !spaceJustPressed) {
 			control.onPressSpace();
 			spaceJustPressed = true;
 		}
@@ -99,7 +99,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 	public void keyReleased(KeyEvent arg0) {
 		if(arg0.getKeyCode() == KeyEvent.VK_UP)
 			upJustPressed = false;
-		else if(arg0.getKeyCode() == KeyEvent.VK_SPACE)
+		else if(arg0.getKeyCode() == KeyEvent.VK_Z)
 			spaceJustPressed = false;
 	}
 
@@ -157,7 +157,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 
 
 		JLabel txtHowTo1 = new JLabel("<html>Press UP to jump.<br>"
-				+ "Press SPACE to fire.<br>"
+				+ "Press Z to fire.<br>"
 				+ "You cannot destroy Asteriods.<br>"
 				+ "Shoot everything else.<br>"
 				+ "Try not to die.</html>");
