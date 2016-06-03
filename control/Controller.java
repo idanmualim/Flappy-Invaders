@@ -43,7 +43,7 @@ public class Controller {
     	int arg3 = 0;
     	if(field.getShotsFired() != 0)
     		arg3 = (int)(arg2 * 100.0 / field.getShotsFired());
-    	double arg4 = ((int)((field.getTime() / 60.0) * 100)) / 100.0;
+    	double arg4 = ((int)((field.getTime() / 50.0) * 100)) / 100.0;
     	graphicsUserInt.displayGameOver(arg1, arg2, arg3, arg4);
     }
     
