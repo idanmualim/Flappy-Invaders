@@ -98,11 +98,7 @@ public class GameField {
 						objects.remove(z);
 						z--;
 						shipsDestroyed++;
-					} else if (objects.get(z) instanceof Bullet) {
-						objects.remove(z);
-						z--;
-						score += 10;
-					}
+					} 
 				}
 			}
 		}
